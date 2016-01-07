@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  
+  <filter>
+  	<filter-name>encodingFilter</filter-name>
+  	<filter-class>com.job.filter.EncodeFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  <servlet>
+    <servlet-name>NewsServlet</servlet-name>
+    <servlet-class>com.job.servlet.NewsServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>NewsServlet</servlet-name>
+    <url-pattern>/admin/NewsServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>countServlet</servlet-name>
+    <servlet-class>com.job.servlet.CountServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>orderOfferServlet</servlet-name>
+    <servlet-class>com.job.servlet.orderOfferServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CommentServlet</servlet-name>
+    <servlet-class>com.job.servlet.CommentServlet</servlet-class>
+  </servlet>
+
+
+
+  <servlet-mapping>
+    <servlet-name>countServlet</servlet-name>
+    <url-pattern>/countServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>orderOfferServlet</servlet-name>
+    <url-pattern>/orderOfferServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CommentServlet</servlet-name>
+    <url-pattern>/comment/CommentServlet</url-pattern>
+  </servlet-mapping>
+
+</web-app>
