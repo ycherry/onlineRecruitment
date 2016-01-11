@@ -53,7 +53,7 @@
 									
 								</td>
 							</tr>
-							<tr>
+	<!--  						<tr>
 								<td width="33" height="21" align="center">
 									<img src="images/infi_52.jpg" width="4" height="5" />
 								</td>
@@ -160,7 +160,7 @@
 									<a href="" class="back STYLE7">西安中洲电力设备有限公司 </a>
 								</td>
 							</tr>
-
+-->
 							<tr>
 								<td height="28" colspan="4" bgcolor="#D74404">
 									<span class="STYLE10">新闻浏览</span>
