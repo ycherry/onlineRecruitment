@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=GBK" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="com.util.*" %>
 <%@ page session="true" %>
 <html>
@@ -28,7 +28,7 @@ default:response.sendRedirect("index.jsp");break;
 }
 else
 {
-out.print("<script language=\"javascript\">alert(\"ÖØĞÂµÇÂ¼\"</script>");
+out.print("<script language=\"javascript\">alert(\"é‡æ–°ç™»å½•\"</script>");
 response.sendRedirect("index.jsp");
 }
  %>

@@ -1,39 +1,47 @@
-<%@ page contentType="text/html;charset=GBK"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="com.util.*"%>
-<%@ page session="true" %>
+<%@ page session="true"%>
 <html>
 <head>
-<title>
-login
-</title>
+<title>login</title>
 </head>
 <body bgcolor="#ffffff">
-<h1>
-<%
-String password=request.getParameter("password");
-String username=request.getParameter("user");
-int type=Integer.parseInt(request.getParameter("type"));
-DataBaseOperation data=new DataBaseOperation();
-int intT=data.getRowCount("t_user where username='"+username+"'and userPass='"+password+"' and userType="+type );
-if(intT>0){
-session.setAttribute("usercode",username);
-session.setAttribute("userType",new Integer(type));
-session.setAttribute("flag","true");
-switch(type)
-{
-case 1:response.sendRedirect("jobseeker/index.html");break;
-//µÇÂ½ÓÃ»§ÊÇÇóÖ°Õß
-case 2:response.sendRedirect("company/index.html");break;
-//µÇÂ½ÓÃ»§ÊÇÕĞÆ¸¹«Ë¾
-case 3:response.sendRedirect("admin/index.html");break;
-//µÇÂ½ÓÃ»§ÊÇ¹ÜÀíÔ±
-default:response.sendRedirect("index.jsp");break;
-}
-}else{
-out.print("<script language=\"javascript\">alert<\"ÇëÖØĞÂµÇÂ½\")</script>");
-response.sendRedirect("index.jsp");
-}
-%>
-</h1>
+	<h1>
+		<%
+			String password = request.getParameter("password");
+			String username = request.getParameter("user");
+			int type = Integer.parseInt(request.getParameter("type"));
+			DataBaseOperation data = new DataBaseOperation();
+			int intT = data.getRowCount(
+					"t_user where username='" + username + "'and userPass='" + password + "' and userType=" + type);
+			System.out.println("t_user where username='" + username + "'and userPass='" + password + "' and userType=" + type);
+			System.out.println(intT);
+			if (intT > 0) {
+				session.setAttribute("usercode", username);
+				session.setAttribute("userType", new Integer(type));
+				session.setAttribute("flag", "true");
+				switch (type) {
+				case 1:
+					response.sendRedirect("jobseeker/index.html");
+					break;
+				//ç™»é™†ç”¨æˆ·æ˜¯æ±‚èŒè€…
+				case 2:
+					response.sendRedirect("company/index.html");
+					break;
+				//ç™»é™†ç”¨æˆ·æ˜¯æ‹›è˜å…¬å¸
+				case 3:
+					response.sendRedirect("admin/index.html");
+					break;
+				//ç™»é™†ç”¨æˆ·æ˜¯ç®¡ç†å‘˜
+				default:
+					response.sendRedirect("index.jsp");
+					break;
+				}
+			} else {
+				out.print("<script language=\"javascript\">alert<\"è¯·é‡æ–°ç™»é™†\")</script>");
+				response.sendRedirect("index.jsp");
+			}
+		%>
+	</h1>
 </body>
 </html>

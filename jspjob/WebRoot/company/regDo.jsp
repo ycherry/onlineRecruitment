@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page import="com.util.*,javax.servlet.http.HttpServletRequest"%>
 <%//request.setCharacterEncoding("gb2312");%>
 <jsp:useBean id="Company" class="com.job.domain.Company" scope="request"/>
-<!--¹¹Ôì Company ÀàµÄ¶ÔÏó Company-->
+<!--æ„é€  Company ç±»çš„å¯¹è±¡ Company-->
 <jsp:setProperty name="Company" property="*"/>
-<!--ÉèÖÃ¶ÔÏó Company µÄÊôĞÔ-->
+<!--è®¾ç½®å¯¹è±¡ Company çš„å±æ€§-->
 <%
 DealString str=new DealString();
 ShowErrorBox show=new ShowErrorBox();
@@ -18,12 +18,12 @@ st.addBatch(sql);
 sql="insert into t_user(userName,userPass,userType)values('"+Company.getCusername()+"','"+Company.getPassword()+"','2')";
 st.addBatch(sql);
 st.executeBatch();
-out.print("<script>alert('ĞŞ¸Ä³É¹¦£¡');document.location='../index.jsp';</script>");
+out.print("<script>alert('ä¿®æ”¹æˆåŠŸï¼');document.location='../index.jsp';</script>");
 return;
 }
 catch(Exception e)
 {
-out.print(show.errorBox("ĞŞ¸ÄÊ§°Ü£¬Êı¾İ¿â´íÎó£¡","´íÎóĞÅÏ¢"));
+out.print(show.errorBox("ä¿®æ”¹å¤±è´¥ï¼Œæ•°æ®åº“é”™è¯¯ï¼","é”™è¯¯ä¿¡æ¯"));
 }
 
 %>

@@ -1,155 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
-		<title>×¢²á</title>
-		<link href="../css/default.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" language="javascript">
-   	function check(){
-		var username=document.getElementById("usernameId").value;
-	var password=document.getElementById("passwordId").value;
-	if(username.length==0)
-	{
-		alert("username should not be blank");
-		return false;
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>æ³¨å†Œ</title>
+<link href="../css/default.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" language="javascript">
+	function check() {
+		var username = document.getElementById("usernameId").value;
+		var password = document.getElementById("passwordId").value;
+		if (username.length == 0) {
+			alert("username should not be blank");
+			return false;
+		}
+		if (password.length == 0) {
+			alert("password should not be blank");
+			return false;
+		}
+		return true;
 	}
-	if(password.length==0){
-		alert("password should not be blank");
-		return false;
-	}
-	return true;
-	}
-   
-   
-   
-   </script>
-	</head>
-	<body style="margin: 0px;">
-		<form name="form" method="post" action="regDo.jsp"
-			onsubmit="return check();">
-			<table width="900" border="0" align="center" cellpadding="0"
-				cellspacing="0" bgcolor="#F5f7f7">
-				<tr>
-					<td colspan="2">
-						<img src="../images/head.jpg" />
-					</td>
-				</tr>
-				<tr align="center">
-					<td height="40" colspan="2">
-						<div id="reg">
-							<font color=red> ÇóÖ°Õß×¢²á</font>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="196" height="22" align="center">
-						ÓÃ&nbsp;»§&nbsp; Ãû:
-					</td>
-					<td width="389">
-						<input type="text" name="susername" id="username">
-					</td>
-				</tr>
-				<tr>
-					<td height="22" align="center">
-						ÃÜ&nbsp;&nbsp;&nbsp;&nbsp;Âë:
-					</td>
-					<td>
-						<input type="password" name="password" id="password">
-					</td>
-				</tr>
-				<tr>
-					<td height="22" align="center">
-						ÃÜÂëÈ·ÈÏ:
-					</td>
-					<td>
-						<input type="password" name="rpassword" id="repass">
-					</td>
-				</tr>
-				<tr>
-					<td width="196" height="22" align="center">
-						ÕæÊµĞÕÃû:
-					</td>
-					<td width="389">
-						<input type="text" name="struename">
-					</td>
-				</tr>
-				<tr>
-					<td width="196" height="22" align="center">
-						Äê&nbsp;&nbsp;&nbsp;&nbsp;Áä:
-					</td>
-					<td width="389">
-						<input type="text" name="age">
-					</td>
-				</tr>
-				<tr>
-					<td width="196" height="22" align="center">
-						ĞÔ&nbsp;&nbsp;&nbsp;&nbsp;±ğ:
-					</td>
-					<td width="389">
-						<input type="radio" name="sex" value="1" checked>
-						ÄĞ
-						<input type="radio" name="sex" value="0">
-						Å®
-					</td>
-				</tr>
-				<tr>
-					<td width="196" height="22" align="center">
-						³öÉúÈÕÆÚ:
-					</td>
-					<td width="389">
-						<input type="text" name="birthday">
-						Äê-ÔÂ-ÈÕ
-					</td>
-				</tr>
-				<tr>
-					<td width="196" height="22" align="center">
-						±ÏÒµÔºĞ£:
-					</td>
-					<td width="389">
-						<input type="text" name="school" value="²»Ïê">
-					</td>
-				</tr>
-				<tr>
-					<td width="196" height="22" align="center">
-						µç×ÓÓÊ¼ş:
-					</td>
-					<td width="389">
-						<input type="text" name="email">
-					</td>
-				</tr>
-				<tr>
-					<td width="196" height="22" align="center">
-						ËùÑ§×¨Òµ:
-					</td>
-					<td width="389">
-						<input type="text" name="specialty" value="²»Ïé">
-					</td>
-				</tr>
-				<tr>
-					<td width="196" height="22" align="center">
-						×î¸ßÑ§Àú:
-					</td>
-					<td width="389">
-						<input type="text" name="knowledge" value="²»Ïé">
-					</td>
-				</tr>
-				<tr>
-					<td width="196" height="22" align="center">
-						¸öÈË¼òÀú:
-					</td>
-					<td width="389">
-						<textarea name="resume" cols="35" rows="5">ÎŞ</textarea>
-					</td>
-				</tr>
-				<tr align="center">
-					<td height="35" colspan="2">
-						<input type="submit" name="Submit" value="×¢²á"
-							onClick="return reg()">
-						&nbsp;&nbsp;
-						<input type="reset" name="Reset" value="ÖØÖÃ">
-					</td>
-				</tr>
+</script>
+</head>
+<body style="margin: 0px;">
+	<form name="form" method="post" action="regDo.jsp"
+		onsubmit="return check();">
+		<table width="900" border="0" align="center" cellpadding="0"
+			cellspacing="0" bgcolor="#F5f7f7">
+			<tr>
+				<td colspan="2"><img src="../images/head.jpg" /></td>
+			</tr>
+			<tr align="center">
+				<td height="40" colspan="2">
+					<div id="reg">
+						<font color=red> æ±‚èŒè€…æ³¨å†Œ</font>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="196" height="22" align="center">ç”¨&nbsp;æˆ·&nbsp; å:</td>
+				<td width="389"><input type="text" name="susername"
+					id="username"></td>
+			</tr>
+			<tr>
+				<td height="22" align="center">å¯†&nbsp;&nbsp;&nbsp;&nbsp;ç :</td>
+				<td><input type="password" name="password" id="password">
+				</td>
+			</tr>
+			<tr>
+				<td height="22" align="center">å¯†ç ç¡®è®¤:</td>
+				<td><input type="password" name="rpassword" id="repass">
+				</td>
+			</tr>
+			<tr>
+				<td width="196" height="22" align="center">çœŸå®å§“å:</td>
+				<td width="389"><input type="text" name="struename"></td>
+			</tr>
+			<tr>
+				<td width="196" height="22" align="center">
+					å¹´&nbsp;&nbsp;&nbsp;&nbsp;é¾„:</td>
+				<td width="389"><input type="text" name="age"></td>
+			</tr>
+			<tr>
+				<td width="196" height="22" align="center">
+					æ€§&nbsp;&nbsp;&nbsp;&nbsp;åˆ«:</td>
+				<td width="389"><input type="radio" name="sex" value="1"
+					checked> ç”· <input type="radio" name="sex" value="0">
+					å¥³</td>
+			</tr>
+			<tr>
+				<td width="196" height="22" align="center">å‡ºç”Ÿæ—¥æœŸ:</td>
+				<td width="389"><input type="text" name="birthday">
+					å¹´-æœˆ-æ—¥</td>
+			</tr>
+			<tr>
+				<td width="196" height="22" align="center">æ¯•ä¸šé™¢æ ¡:</td>
+				<td width="389"><input type="text" name="school" value="ä¸è¯¦">
+				</td>
+			</tr>
+			<tr>
+				<td width="196" height="22" align="center">ç”µå­é‚®ä»¶:</td>
+				<td width="389"><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td width="196" height="22" align="center">æ‰€å­¦ä¸“ä¸š:</td>
+				<td width="389"><input type="text" name="specialty" value="ä¸ç¥¥">
+				</td>
+			</tr>
+			<tr>
+				<td width="196" height="22" align="center">æœ€é«˜å­¦å†:</td>
+				<td width="389"><input type="text" name="knowledge" value="ä¸ç¥¥">
+				</td>
+			</tr>
+			<tr>
+				<td width="196" height="22" align="center">ä¸ªäººç®€å†:</td>
+				<td width="389"><textarea name="resume" cols="35" rows="5">æ— </textarea>
+				</td>
+			</tr>
+			<tr align="center">
+				<td height="35" colspan="2"><input type="submit" name="Submit"
+					value="æ³¨å†Œ" > &nbsp;&nbsp; <input
+					type="reset" name="Reset" value="é‡ç½®"></td>
+			</tr>
 
-			</table>
-		</form>
-	</body>
+		</table>
+	</form>
+</body>
 </html>

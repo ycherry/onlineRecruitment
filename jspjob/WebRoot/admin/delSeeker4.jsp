@@ -1,12 +1,12 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="com.util.*" %>
 <%
 String jobid=(String)request.getParameter("jobid");
 DataBaseOperation data=new DataBaseOperation();
 int intT=data.delete("DELETE FROM t_pubjob WHERE jobid='"+jobid+"'");
 if(intT>0){
-out.print("<script>alert('É¾³ı³É¹¦£¡');document.location='index1.html';</script>");
+out.print("<script>alert('åˆ é™¤æˆåŠŸï¼');document.location='index1.html';</script>");
 }else{
-new ShowErrorBox().errorBox("É¾³ıÊ§°Ü£¡","´íÎóĞÅÏ¢");
+new ShowErrorBox().errorBox("åˆ é™¤å¤±è´¥ï¼","é”™è¯¯ä¿¡æ¯");
 }
 %>

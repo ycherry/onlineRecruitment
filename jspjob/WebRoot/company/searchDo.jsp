@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="gbk"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <%@ page import="com.util.*" %>
 <%@page import="java.sql.ResultSet"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -31,13 +31,13 @@ ResultSet rs=dbc.getRs(sql);
  %>
 <table width="680" border="1" cellspacing="0" cellpadding="0">
   <tr>
-    <td colspan="4"><span class="STYLE7">หัห๗ฝแน๛:</td>
+    <td colspan="4"><span class="STYLE7">ๆ็ดข็ป“ๆ:</td>
   </tr>
   <tr>
-    <td width="70" align="center"><span class="STYLE7">ืจาต</span></td>
-    <td width="173" align="center"><span class="STYLE7">ฦฺอ๛ึฐฮป</span></td>
-    <td width="214" align="center"><span class="STYLE7">ฦฺอ๛ะฝหฎ</span></td>
-    <td width="213" align="center"><span class="STYLE7">ทขฒผสฑผไ</span></td>
+    <td width="70" align="center"><span class="STYLE7">ไธ“ไธ</span></td>
+    <td width="173" align="center"><span class="STYLE7">ๆๆ่ไฝ</span></td>
+    <td width="214" align="center"><span class="STYLE7">ๆๆ่–ชๆฐด</span></td>
+    <td width="213" align="center"><span class="STYLE7">ๅ‘ๅธๆ—ถ้—ด</span></td>
   </tr>
   <%
   	int i=0;
@@ -56,7 +56,7 @@ ResultSet rs=dbc.getRs(sql);
   
    %>
   <tr>
-    <td colspan="4" align="right"><span class="STYLE8">ืÜตฺ<span class="STYLE4"><%=i %></span>/<span class="STYLE4">1</span>าณ ษฯาปาณ ฯยาปาณ ฮฒาณ</span></td>
+    <td colspan="4" align="right"><span class="STYLE8">ๆ€ป็ฌฌ<span class="STYLE4"><%=i %></span>/<span class="STYLE4">1</span>้กต ไธไธ€้กต ไธไธ€้กต ๅฐพ้กต</span></td>
   </tr>
 </table>
 </body>

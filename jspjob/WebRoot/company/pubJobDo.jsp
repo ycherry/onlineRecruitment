@@ -1,10 +1,10 @@
-<%@ page contentType="text/html;charset=GB2312"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="com.util.*,javax.servlet.http.HttpServletRequest"%>
 <%//request.setCharacterEncoding("GBK");%>
 <jsp:useBean id="companyPublishJob" scope="request" class="com.job.domain.CompanyPublishJob"/>
-<!--¹¹ÔìcompanyPublishJob¶ÔÏó-->
+<!--æ„é€ companyPublishJobå¯¹è±¡-->
 <jsp:setProperty name="companyPublishJob" property="*"/>
-<!--ÉèÖÃ¶ÔÏócompanyPublishJobµÄÊôĞÔ-->
+<!--è®¾ç½®å¯¹è±¡companyPublishJobçš„å±æ€§-->
 <% 
 DataBaseOperation date=new DataBaseOperation();
 DealTime time=new DealTime();
@@ -14,9 +14,9 @@ int intT=0;
 String strName=(String) session.getAttribute("usercode");
 intT=date.insert("INSERT INTO t_pubjob(cusername,specialty, "+" jobName,salary,ptime,atime,other) VALUES('"+strName+"','"+str.toGb(companyPublishJob.getSpecialty())+"','"+str.toGb(companyPublishJob.getJobName())+"','"+str.toGb(companyPublishJob.getSalary())+"','"+time.getYMD()+"','"+str.toGb(companyPublishJob.getEndTime())+"','"+str.toGb(companyPublishJob.getOthers())+"')");
 if(intT<=0){
-out.print(show.errorBox("·¢²¼Ê§°Ü,Äã¿ÉÄÜÒÑ¾­ÏÂÏßÇëĞÂµÇÂ½!","´íÎóĞÅÏ¢"));
+out.print(show.errorBox("å‘å¸ƒå¤±è´¥,ä½ å¯èƒ½å·²ç»ä¸‹çº¿è¯·æ–°ç™»é™†!","é”™è¯¯ä¿¡æ¯"));
 return;
 }else{
-out.print("<script>alert('·¢²¼³É¹¦!');document.location='index1.html'</script>");
+out.print("<script>alert('å‘å¸ƒæˆåŠŸ!');document.location='index1.html'</script>");
 }
 %>

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="com.util.*" %>
 
 
@@ -6,6 +6,6 @@
   session.putValue("password",null);  %>
  
 <SCRIPT language=JavaScript>
-alert('ÓÃ»§³É¹¦ÍË³öµÇÂ¼£¬ÕıÔÚ·µ»ØÊ×Ò³£¡');
+alert('ç”¨æˆ·æˆåŠŸé€€å‡ºç™»å½•ï¼Œæ­£åœ¨è¿”å›é¦–é¡µï¼');
 this.location.href='./index.jsp';
 </SCRIPT>

@@ -1,55 +1,41 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page import="com.util.*,javax.servlet.http.HttpServletRequest"%>
 <%
-	//request.setCharacterEncoding("gb2312");
+	request.setCharacterEncoding("UTF-8");
 %>
-<jsp:useBean id="jobSeeker" class="com.job.domain.JobSeeker" scope="request" />
-<!--¹¹Ôì jobSeeker ÀàµÄ¶ÔÏó jobSeeker-->
+<jsp:useBean id="jobSeeker" class="com.job.domain.JobSeeker"
+	scope="request" />
+<!--æ„é€  jobSeeker ç±»çš„å¯¹è±¡ jobSeeker-->
 <jsp:setProperty name="jobSeeker" property="*" />
-<!--ÉèÖÃ¶ÔÏó jobSeeker µÄÊôĞÔ-->
+<!--è®¾ç½®å¯¹è±¡ jobSeeker çš„å±æ€§-->
 <%
+	System.out.println("jobSeeker:");
+	
 	DealString str = new DealString();
+	System.out.println(new String(request.getParameter("struename").getBytes("utf-8"),"utf-8"));
 	ShowErrorBox show = new ShowErrorBox();
-	if (jobSeeker.getSusername().compareTo("z") >= 0
-			|| jobSeeker.getSusername().compareTo("0") <= 0) {
-		out.print(show.errorBox("×¢²áÓÃ»§Ãû²»ÔÊĞíÎªÌØÊâ×Ö·ûºÍºº×Ö£¡", "´íÎóĞÅÏ¢"));
+	if (jobSeeker.getSusername().compareTo("z") >= 0 || jobSeeker.getSusername().compareTo("0") <= 0) {
+		out.print(show.errorBox("æ³¨å†Œç”¨æˆ·åä¸å…è®¸ä¸ºç‰¹æ®Šå­—ç¬¦å’Œæ±‰å­—ï¼", "é”™è¯¯ä¿¡æ¯"));
 		return;
 	}
 	DataBaseConn dbc = new DataBaseConn();
 	try {
 		java.sql.Statement st = dbc.getStmt();
 		String sql = "INSERT INTO t_jobSeeker(auserName,trueName,age,sex,birthday,"
-				+ "school,specialty,knowledge,email,resume)VALUES('"
-				+ jobSeeker.getSusername()
-				+ "','"
-				+ str.toGb(jobSeeker.getStruename())
-				+ "','"
-				+ jobSeeker.getAge()
-				+ "','"
-				+ jobSeeker.getSex()
-				+ "','"
-				+ jobSeeker.getBirthday()
-				+ "','"
-				+ str.toGb(jobSeeker.getSchool())
-				+ "','"
-				+ str.toGb(jobSeeker.getSpecialty())
-				+ "','"
-				+ str.toGb(jobSeeker.getKnowledge())
-				+ "','"
-				+ jobSeeker.getEmail()
-				+ "','"
-				+ str.toGb(jobSeeker.getResume()) + "')";
+				+ "school,specialty,knowledge,email,resume)VALUES('" + jobSeeker.getSusername() + "','"
+				+ str.toGb(jobSeeker.getStruename()) + "','" + jobSeeker.getAge() + "','" + jobSeeker.getSex()
+				+ "','" + jobSeeker.getBirthday() + "','" + str.toGb(jobSeeker.getSchool()) + "','"
+				+ str.toGb(jobSeeker.getSpecialty()) + "','" + str.toGb(jobSeeker.getKnowledge()) + "','"
+				+ jobSeeker.getEmail() + "','" + str.toGb(jobSeeker.getResume()) + "')";
 		st.addBatch(sql);
-		sql = "insert into t_user(userName,userPass,userType)values('"
-				+ jobSeeker.getSusername() + "','"
-				+ jobSeeker.getPassword() + "','" + jobSeeker.getSex()
-				+ "')";
+		System.out.println(sql);
+		sql = "insert into t_user(userName,userPass,userType)values('" + jobSeeker.getSusername() + "','"
+				+ jobSeeker.getPassword() + "','1')";
 		st.addBatch(sql);
 		st.executeBatch();
-		out
-				.print("<script>alert('×¢²á³É¹¦£¡');document.location='../index.jsp';</script>");
+		out.print("<script>alert('æ³¨å†ŒæˆåŠŸï¼');document.location='../index.jsp';</script>");
 		return;
 	} catch (Exception e) {
-		out.print(show.errorBox("ĞŞ¸ÄÊ§°Ü£¬Êı¾İ¿â´íÎó£¡", "´íÎóĞÅÏ¢"));
+		out.print(show.errorBox("ä¿®æ”¹å¤±è´¥ï¼Œæ•°æ®åº“é”™è¯¯ï¼", "é”™è¯¯ä¿¡æ¯"));
 	}
 %>

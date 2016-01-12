@@ -1,8 +1,8 @@
-<%@ page contentType="text/html;charset=GBK" import="java.util.*"%>
+<%@ page contentType="text/html;charset=UTF-8" import="java.util.*"%>
 <%@page import="com.job.dao.NewsDao"%>
 <%@page import="com.job.domain.News"%>
 <html>
-<title>»¶Ó­µÇÂ½ÈË²ÅÕÐÆ¸Íø</title>
+<title>æ¬¢è¿Žç™»é™†äººæ‰æ‹›è˜ç½‘</title>
 <style type="text/css">
 <!--
 .STYLE2 {
@@ -28,9 +28,9 @@
 					width="100%" height="90%" /></td>
 			</tr>
 			<tr bgcolor="#D74404">
-				<td height="28" align="right"><span class="STYLE10" align="right">ÔÚÏß¼òÀúÌîÐ´</span></td>
+				<td height="28" align="right"><span class="STYLE10" align="right">åœ¨çº¿ç®€åŽ†å¡«å†™</span></td>
 				<td align="left"><a
-					href="/jspjob/jobseeker/pubJob.jsp" class="back STYLE7">¼òÀúÌîÐ´</a></td>
+					href="/jspjob/jobseeker/pubJob.jsp" class="back STYLE7">ç®€åŽ†å¡«å†™</a></td>
 			</tr>
 
 	<!--		<tr>
@@ -39,19 +39,19 @@
 							<tr>
 				 			<td height="28" colspan="4" bgcolor="#D74404"><span
 								class="STYLE10"> <img src="/jspjob/countServlet"
-									height="0" width="0" /> <span>µ±Ç°ÔÚÏßÈËÊý :</span> <%=request.getSession().getServletContext()
+									height="0" width="0" /> <span>å½“å‰åœ¨çº¿äººæ•° :</span> <%=request.getSession().getServletContext()
 					.getAttribute("count")%>
 							</span></td>
 							<td height="28" colspan="8" bgcolor="#D74404"><span
-								class="STYLE10"> <span>±±¾©Ê±¼ä:</span> <%=new Date().toLocaleString()%>
+								class="STYLE10"> <span>åŒ—äº¬æ—¶é—´:</span> <%=new Date().toLocaleString()%>
 							</span></td> 
 						</tr>
 						<tr bgcolor="#D74404">
-							<td height="28" colspan="8"><span class="STYLE10">ÔÚÏß¼òÀúÌîÐ´</span></td>
+							<td height="28" colspan="8"><span class="STYLE10">åœ¨çº¿ç®€åŽ†å¡«å†™</span></td>
 							<td width="33" height="21" align="center"><img
 								src="images/infi_52.jpg" width="8" height="10" /></td>
 							<td width="400" align="left"><a
-								href="/jspjob/jobseeker/pubJob.jsp" class="back STYLE7">¼òÀúÌîÐ´</a>
+								href="/jspjob/jobseeker/pubJob.jsp" class="back STYLE7">ç®€åŽ†å¡«å†™</a>
 							</td>
 						</tr>
 					</table>
@@ -60,7 +60,7 @@
 		-->
 			<tr>
 				<td width="151" height="40" align="right" bgcolor="#C8D5E4"><span
-					class="STYLE2"> ÓÃ»§Ãû: </span></td>
+					class="STYLE2"> ç”¨æˆ·å: </span></td>
 				<td width="144" height="40" bgcolor="#C8D5E4"><input
 					name="user" type="text" size="15"></td>
 
@@ -68,24 +68,24 @@
 			</tr>
 			<tr bgcolor="#C8D5E4">
 				<td width="151" height="40" align="right"><span class="STYLE2">
-						ÃÜÂë: </span></td>
+						å¯†ç : </span></td>
 				<td width="144" height="40"><input name="password"
 					type="password" size="15"></td>
 			</tr>
 			<tr bgcolor="#C8D5E4">
 				<td width="151" height="40" align="right"><span class="STYLE2">
 						<input type=radio name="type" value=1 checked> <font
-						size="2">¸öÈËÇóÖ°</font>
+						size="2">ä¸ªäººæ±‚èŒ</font>
 				</span></td>
 				<td width="144" height="40"><span class="STYLE2" > <input
-						type=radio name="type" value=2> <font size="2" >ÆóÒµÕÐÆ¸</font>
+						type=radio name="type" value=2> <font size="2" >ä¼ä¸šæ‹›è˜</font>
 				</span></td>
 			</tr>
 			<tr bgcolor="#C8D5E4">
 				<td width="151" height="40" align="right"><input name="submit"
-					type="submit" value="µÇÂ½"></td>
+					type="submit" value="ç™»é™†"></td>
 				<td width="144" height="40"><input name="reset" type="reset"
-					value="ÖØÖÃ"></td>
+					value="é‡ç½®"></td>
 			</tr>
 			<tr bgcolor="#C8D5E4">
 				<td width="151" height="37" align="right"><a href="company/reg.html"><img

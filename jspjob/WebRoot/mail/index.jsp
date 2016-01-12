@@ -1,7 +1,7 @@
-<%@ page contentType="text/html;charset=gb2312" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <link href="../css/left.css" rel="stylesheet" type="text/css">
 </head>
 <body topmargin="0px">
@@ -13,55 +13,55 @@
 <td align="left" valign="top"><table width="600" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#F5f7f7">
 <form name="form1" method="post" action="sendMail.jsp">
 <tr align="center">
-<td height="27" colspan="2"><div id="reg"><font color=red>·¢ËÍÓÊ¼ş</font></div></td>
+<td height="27" colspan="2"><div id="reg"><font color=red>å‘é€é‚®ä»¶</font></div></td>
 </tr>
 <tr>
-<td width="200" height="22" align="center">smtp ·şÎñÆ÷£¨ºÍ·¢ËÍÈËÓÊ¼şµØÖ·¶ÔÓ¦£©:</td>
-<td width="300"><input type="text" name="smtpserver">* ÀıÈç£ºsmtp.sohu.com</td>
+<td width="200" height="22" align="center">smtp æœåŠ¡å™¨ï¼ˆå’Œå‘é€äººé‚®ä»¶åœ°å€å¯¹åº”ï¼‰:</td>
+<td width="300"><input type="text" name="smtpserver">* ä¾‹å¦‚ï¼šsmtp.sohu.com</td>
 </tr>
 <tr>
-<td width="200" height="22" align="center">·¢¼şÈËĞÅÏä£º</td>
+<td width="200" height="22" align="center">å‘ä»¶äººä¿¡ç®±ï¼š</td>
 <td width="300"><input type="text" name="sfrom">*mm@ss.com</td>
 </tr>
 <tr>
-<td width="200" height="22" align="center">·¢¼şÈËĞÅÏäÃÜÂë:</td>
+<td width="200" height="22" align="center">å‘ä»¶äººä¿¡ç®±å¯†ç :</td>
 <td width="300"><input type="password" name="pass"></td>
 </tr>
 <tr>
-<td width="200" height="22" align="center">ÊÕ¼şÈË1:</td>
+<td width="200" height="22" align="center">æ”¶ä»¶äºº1:</td>
 <td width="300"><input type="text" name="from">*mmm@sss.com
     </td>
 </tr>
 <tr>
-<td height="22" align="center">ÊÕ¼şÈË2:</td>
+<td height="22" align="center">æ”¶ä»¶äºº2:</td>
 <td height="22"><input type="text" name="from"></td>
 </tr>
 <tr>
-<td height="22" align="center">ÊÕ¼şÈË3:</td>
+<td height="22" align="center">æ”¶ä»¶äºº3:</td>
 <td height="22"><input type="text" name="from"></td>
 </tr>
 <tr>
-<td height="22" align="center">ÊÕ¼şÈË4:</td>
+<td height="22" align="center">æ”¶ä»¶äºº4:</td>
 <td height="22"><input type="text" name="from"></td>
 </tr>
 <tr>
-<td height="22" align="center">Ö÷&nbsp;&nbsp;&nbsp;&nbsp;Ìâ:</td>
+<td height="22" align="center">ä¸»&nbsp;&nbsp;&nbsp;&nbsp;é¢˜:</td>
 <td height="22"><input name="subject" type="text" size="35"></td>
 </tr>
 <tr>
-<td height="22" align="center">¸½&nbsp;&nbsp;&nbsp;&nbsp;¼ş:</td>
-<td height="22"><input type="text" name="file">ÀıÈç:c:\\\\boot.ini</td>
+<td height="22" align="center">é™„&nbsp;&nbsp;&nbsp;&nbsp;ä»¶:</td>
+<td height="22"><input type="text" name="file">ä¾‹å¦‚:c:\\\\boot.ini</td>
 </tr>
 <tr> 
-<td height="22" colspan="2" align="center">ÄÚ&nbsp;&nbsp;Èİ:</td>
+<td height="22" colspan="2" align="center">å†…&nbsp;&nbsp;å®¹:</td>
 </tr>
 <tr>
 <td height="22" colspan="2" align="center"><textarea name="message" cols="60" rows="6"></textarea></td>
 </tr>
 <tr>
-<td height="27" colspan="2" align="center"><input type="submit" name="Submit" value="È·¶¨">
+<td height="27" colspan="2" align="center"><input type="submit" name="Submit" value="ç¡®å®š">
 &nbsp;&nbsp;
-<input type="reset" name="Submit2" value="ÖØÖÃ"></td>
+<input type="reset" name="Submit2" value="é‡ç½®"></td>
 </tr>
 
 </table></td>

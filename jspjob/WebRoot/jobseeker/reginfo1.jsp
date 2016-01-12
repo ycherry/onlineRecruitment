@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="com.util.*,javax.servlet.http.HttpServletRequest"%>
 <%
 	//request.setCharacterEndcoding("GB2312");
@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
-<title>ÐÞ¸ÄÐÅÏ¢</title>
+<title>ä¿®æ”¹ä¿¡æ¯</title>
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -26,16 +26,16 @@
 
 			<tr align="center">
 				<td height="27" colspan="2"><div id="reg">
-						<font color=red> ÇóÖ°ÕßÐÞ¸ÄÐÅÏ¢</font>
+						<font color=red> æ±‚èŒè€…ä¿®æ”¹ä¿¡æ¯</font>
 					</div></td>
 			</tr>
 			<tr>
-				<td width="200" height="22" align="center">ÕæÊµÐÕÃû:</td>
+				<td width="200" height="22" align="center">çœŸå®žå§“å:</td>
 				<td width="300"><input type="text" name="struename"
 					value="<%=rs.getString(3)%>"></td>
 			</tr>
 			<tr>
-				<td width="200" height="22" align="center">Äê&nbsp;&nbsp;&nbsp;&nbsp;Áä:</td>
+				<td width="200" height="22" align="center">å¹´&nbsp;&nbsp;&nbsp;&nbsp;é¾„:</td>
 				<td width="300"><input type="text" name="age"
 					value="<%=rs.getInt(4)%>"></td>
 			</tr>
@@ -44,55 +44,55 @@
 					if (i == 1) {
 			%>
 			<tr>
-				<td width="200" height="22" align="center">ÐÔ&nbsp;&nbsp;&nbsp;&nbsp;±ð:</td>
+				<td width="200" height="22" align="center">æ€§&nbsp;&nbsp;&nbsp;&nbsp;åˆ«:</td>
 				<td width="300"><input type="radio" name="sex" value="1"
-					checked> ÄÐ <input type="radio" name="sex" value="0">
-					Å®</td>
+					checked> ç”· <input type="radio" name="sex" value="0">
+					å¥³</td>
 			</tr>
 			<%
 				} else {
 			%>
 			<tr>
-				<td width="200" height="22" align="center">ÐÔ&nbsp;&nbsp;&nbsp;&nbsp;±ð:</td>
+				<td width="200" height="22" align="center">æ€§&nbsp;&nbsp;&nbsp;&nbsp;åˆ«:</td>
 				<td width="300"><input type="radio" name="sex" value="1">
-					ÄÐ <input type="radio" name="sex" value="0" checked> Å®</td>
+					ç”· <input type="radio" name="sex" value="0" checked> å¥³</td>
 			</tr>
 			<%
 				}
 			%>
 			<tr>
-				<td width="200" height="22" align="center">³öÉúÈÕÆÚ:</td>
+				<td width="200" height="22" align="center">å‡ºç”Ÿæ—¥æœŸ:</td>
 				<td width="300"><input type="text" name="birthday"
-					value="<%=rs.getString(6)%>"> Äê-ÔÂ-ÈÕ</td>
+					value="<%=rs.getString(6)%>"> å¹´-æœˆ-æ—¥</td>
 			</tr>
 			<tr>
-				<td width="200" height="22" align="center">±ÏÒµÔºÐ£:</td>
+				<td width="200" height="22" align="center">æ¯•ä¸šé™¢æ ¡:</td>
 				<td width="300"><input type="text" name="school"
 					value="<%=rs.getString(7)%>"></td>
 			</tr>
 			<tr>
-				<td width="200" height="22" align="center">µç×ÓÓÊ¼þ:</td>
+				<td width="200" height="22" align="center">ç”µå­é‚®ä»¶:</td>
 				<td width="300"><input type="text" name="emal"
 					value="<%=rs.getString(10)%>"></td>
 			</tr>
 			<tr>
-				<td width="200" height="22" align="center">ËùÑ§×¨Òµ:</td>
+				<td width="200" height="22" align="center">æ‰€å­¦ä¸“ä¸š:</td>
 				<td width="300"><input type="text" name="specialty"
 					value="<%=rs.getString(8)%>"></td>
 			</tr>
 			<tr>
-				<td width="200" height="22" align="center">×î¸ßÑ§Àú:</td>
+				<td width="200" height="22" align="center">æœ€é«˜å­¦åŽ†:</td>
 				<td width="300"><input type="text" name="knowledge"
 					value="<%=rs.getString(9)%>"></td>
 			</tr>
 			<tr>
-				<td width="200" height="22" align="center">¸öÈË¼òÀú:</td>
+				<td width="200" height="22" align="center">ä¸ªäººç®€åŽ†:</td>
 				<td width="300"><textarea name="resume" cols="35" rows="5"><%=rs.getString(11)%></textarea>
 			</tr>
 			<tr align="center">
 				<td height="35" colspan="2"><input type="submit" name="Submit"
-					value="ÐÞ¸Ä" onClick="return reg()"> &nbsp;&nbsp; <input
-					type="reset" name="Reset" value="ÖØÖÃ"></td>
+					value="ä¿®æ”¹" onClick="return reg()"> &nbsp;&nbsp; <input
+					type="reset" name="Reset" value="é‡ç½®"></td>
 			</tr>
 		</table>
 	</form>

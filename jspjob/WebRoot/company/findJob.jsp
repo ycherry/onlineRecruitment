@@ -1,11 +1,11 @@
 <!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN">
-<%@ page contentType="text/html;charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="com.util.*"%>
 <%@ page import="java.sql.*"%>
 <html>
 <head>
 <meta http-equiv="Content-Jype"content="text/html;charset=gb2312">
-<title>ÎÞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 <link href="../css/left.css" rel="stylesheet=" type="text/css">
 </head>
 <body>
@@ -17,12 +17,12 @@ ResultSet rs=con.getRs("SELECT jobName,specialty,salary,ptime,atime,other FROM t
  %>
 <table width="695" heigth="500" border="1" cellpadding="0" cellspacing="0" bgcolor="#F5f7f7">
  <tr>
- <td width="117">Ö°Î»Ãû³Æ</td>
- <td width="117">×¨Òµ¼¼ÄÜ</td>
- <td width="58">Ð½½ð</td>
- <td width="117">·¢²¼ÈÕÆÚ</td>
- <td width="117">½ØÖÁÈÕÆÚ</td>
- <td width="155">±¸×¢</td>
+ <td width="117">èŒä½åç§°</td>
+ <td width="117">ä¸“ä¸šæŠ€èƒ½</td>
+ <td width="58">è–ªé‡‘</td>
+ <td width="117">å‘å¸ƒæ—¥æœŸ</td>
+ <td width="117">æˆªè‡³æ—¥æœŸ</td>
+ <td width="155">å¤‡æ³¨</td>
  </tr>
  <%
  while(rs.next()){

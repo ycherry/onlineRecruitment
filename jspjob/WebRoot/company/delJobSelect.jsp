@@ -1,4 +1,4 @@
-<%@page contentType="text/html;charset=gb2312"%>
+<%@page contentType="text/html;charset=UTF-8"%>
 <%@page import="com.util.*"%>
 <%@page import="java.sql.*"%>
 <html>
@@ -15,13 +15,13 @@
 <td align="left" valign="top"><table width="692" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#F5f7f7">
 <tr align=center">
 <td height="27" colspan="4"><div id="reg"><font color=red>
-ɾ����ְ��Ϣ</font><div></td>
+删除求职信息</font><div></td>
 </tr>
 <tr>
-<td width="153" height="22" align="center">����ְλ</td>
-<td width="165" align="center">����ʱ��</td>
-<td width="219" align="center">��Чʱ��</td>
-<td width="155" align="center">ɾ��</td>
+<td width="153" height="22" align="center">所求职位</td>
+<td width="165" align="center">发布时间</td>
+<td width="219" align="center">有效时间</td>
+<td width="155" align="center">删除</td>
 </tr>
 <%
 DataBaseConn con=new DataBaseConn();
@@ -35,7 +35,7 @@ int intId=rs.getInt(1);
 <td height="22" align="center"><%=rs.getString(4)%></td>
 <td align="center"><%=rs.getString(6)%></td>
 <td align="center"><%=rs.getString(7)%></td>
-<td align="center"><a href="delJobDo.jsp?intId=<%=intId%>">ɾ��</a>
+<td align="center"><a href="delJobDo.jsp?intId=<%=intId%>">删除</a>
 </td>
 </tr>
 <%

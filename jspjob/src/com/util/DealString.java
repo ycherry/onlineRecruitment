@@ -1,10 +1,10 @@
 package com.util;
 /**
- *×Ö·û´®´¦Àí¹«ÓÃÀà 
+ *Ã—Ã–Â·Ã»Â´Â®Â´Â¦Ã€Ã­Â¹Â«Ã“ÃƒÃ€Ã  
  */
 public class DealString {
     /**
-     * ×ª»»×Ö·û±àÂë ÓÉ¡°iso-8859-1¡±Î÷ÎÄ×ª»»Îª¼òÌåÖĞÎÄ
+     * Ã—ÂªÂ»Â»Ã—Ã–Â·Ã»Â±Ã Ã‚Ã« Ã“Ã‰Â¡Â°iso-8859-1Â¡Â±ÃÃ·ÃÃ„Ã—ÂªÂ»Â»ÃÂªÂ¼Ã²ÃŒÃ¥Ã–ÃÃÃ„
      */
 	public static String toGb(String uniStr){
 		String gbStr="";
@@ -12,8 +12,9 @@ public class DealString {
 			uniStr="";
 		}
 		try{
-			byte[] tempByte=uniStr.getBytes("ISO8859_1");
-			gbStr=new String(tempByte,"GB2312");
+			byte[] tempByte=uniStr.getBytes("utf-8");
+			gbStr=new String(tempByte,"utf-8");
+			System.out.println("DealStringè¢«è°ƒç”¨");
 		}
 		catch(Exception ex){
 			System.out.println(ex.toString());
@@ -21,7 +22,7 @@ public class DealString {
 		return gbStr;
 	}
 	/**
-	 * °Ñ×Ö·û´®×ª»¯Îªuincode±àÂë
+	 * Â°Ã‘Ã—Ã–Â·Ã»Â´Â®Ã—ÂªÂ»Â¯ÃÂªuincodeÂ±Ã Ã‚Ã«
 	 * @param gbStr
 	 * @return
 	 */
@@ -31,8 +32,9 @@ public class DealString {
 			gbStr="";
 		}
 		try{
-			byte[] tempByte=gbStr.getBytes("GB2312");
-			uniStr=new String(tempByte,"ISO8859_1");
+			byte[] tempByte=gbStr.getBytes("utf-8");
+			uniStr=new String(tempByte,"utf-8");
+			System.out.println("DealStringè¢«è°ƒç”¨2");
 		}
 		catch(Exception ex){
 			
@@ -40,8 +42,8 @@ public class DealString {
 		return uniStr;
 	}
 	/**
-	 * È¥µô×Ö·û´®µÄµ¥ÒıºÅ£¬ÀıÈç ÊäÈëa¡®s½«Êä³öa1sÒÔ±ã°Ñ°üº¬µ¥ÒıºÅµÄ×Ö·û´®²åÈëÊı¾İ¿â
-	 * ²»±¨´í
+	 * ÃˆÂ¥ÂµÃ´Ã—Ã–Â·Ã»Â´Â®ÂµÃ„ÂµÂ¥Ã’Ã½ÂºÃ…Â£Â¬Ã€Ã½ÃˆÃ§ ÃŠÃ¤ÃˆÃ«aÂ¡Â®sÂ½Â«ÃŠÃ¤Â³Ã¶a1sÃ’Ã”Â±Ã£Â°Ã‘Â°Ã¼ÂºÂ¬ÂµÂ¥Ã’Ã½ÂºÃ…ÂµÃ„Ã—Ã–Â·Ã»Â´Â®Â²Ã¥ÃˆÃ«ÃŠÃ½Â¾ÃÂ¿Ã¢
+	 * Â²Â»Â±Â¨Â´Ã­
 	 */
 	public String dbEncode(String str){
 		if(str==null){

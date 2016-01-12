@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=GBK" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="com.util.*,javax.servlet.http.HttpServletRequest"%>
 <%//request.setCharacterEncoding("GBK"); %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -65,27 +65,27 @@ body {
  <body LINK=firebrick VLINK=#660000 ALINK=red>
  <div  style="height:100%;">
   <ul id="navigation">
-    <li> <a class="head">ÇóÖ°¹ÜÀí</a>
+    <li> <a class="head">æ±‚èŒç®¡ç†</a>
       <ul>
-        <li><a href="seekerManage.jsp" target="mainFrame">ÇóÖ°Õß¹ÜÀí</a></li>
-        <li><a href="seekerJob.jsp" target="mainFrame">ÇóÖ°ÐÅÏ¢¹ÜÀí </a></li>
+        <li><a href="seekerManage.jsp" target="mainFrame">æ±‚èŒè€…ç®¡ç†</a></li>
+        <li><a href="seekerJob.jsp" target="mainFrame">æ±‚èŒä¿¡æ¯ç®¡ç† </a></li>
       </ul>
     </li>
-    <li> <a class="head">ÕÐÆ¸¹ÜÀí</a>
+    <li> <a class="head">æ‹›è˜ç®¡ç†</a>
       <ul>
-        <li><a href="seekercom.jsp" target="mainFrame">¹«Ë¾¹ÜÀí</a></li>
-        <li><a href="seekerpub.jsp" target="mainFrame">ÕÐÆ¸ÐÅÏ¢¹ÜÀí</a></li>
+        <li><a href="seekercom.jsp" target="mainFrame">å…¬å¸ç®¡ç†</a></li>
+        <li><a href="seekerpub.jsp" target="mainFrame">æ‹›è˜ä¿¡æ¯ç®¡ç†</a></li>
       </ul>
     </li>
-    <li> <a class="head">ÐÂÎÅ¹ÜÀí</a>
+    <li> <a class="head">æ–°é—»ç®¡ç†</a>
       <ul>
-        <li><a href="NewsServlet?method=list" target="mainFrame">ÐÂÎÅÁÐ±í</a></li>
-        <li><a href="NewsServlet?method=addUI" target="mainFrame">Ìí¼ÓÐÂÎÅ</a></li>
+        <li><a href="NewsServlet?method=list" target="mainFrame">æ–°é—»åˆ—è¡¨</a></li>
+        <li><a href="NewsServlet?method=addUI" target="mainFrame">æ·»åŠ æ–°é—»</a></li>
       </ul>
     </li>
-    <li> <a class="head">ÆäËû</a>
+    <li> <a class="head">å…¶ä»–</a>
       <ul>
-        <li><a href="../logout.jsp" target="_parent"">ÍË³ö</a></li>
+        <li><a href="../logout.jsp" target="_parent"">é€€å‡º</a></li>
       </ul>
     </li>
   </ul>

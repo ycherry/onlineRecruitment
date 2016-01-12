@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="com.util.*" %>
 
@@ -13,22 +13,22 @@
   <table height="500" border="0" align="center" cellpadding="0"
   cellspacing="0" bgcolor="#FFFFFF">
   <tr>
-  <td height="50" align="center"><div id="font">¹«Ë¾¹ÜÀí</div></td>
+  <td height="50" align="center"><div id="font">å…¬å¸ç®¡ç†</div></td>
   </tr>
   <tr>
-  <td valign="top"><table ¡¢ border="1" align="left"
+  <td valign="top"><table ã€ border="1" align="left"
   cellpadding="0" cellspacing="0" bgcolor="#f5f7f7">
   <tr align="center" bgcolor="blue">
   <td width="78" height="22">
-  <div id="reg">²Ù×÷</div></td>
-  <td width="200"><div id="reg">¹«Ë¾Ãû³Æ</div></td>
+  <div id="reg">æ“ä½œ</div></td>
+  <td width="200"><div id="reg">å…¬å¸åç§°</div></td>
   
-  <td width="194"><div id="reg">ÁªÏµÈË</div></td>
-   <td width="222"><div id="reg">µç»°</div></td>
-    <td width="244"><div id="reg">µç×ÓÓÊ¼þ</div></td>
+  <td width="194"><div id="reg">è”ç³»äºº</div></td>
+   <td width="222"><div id="reg">ç”µè¯</div></td>
+    <td width="244"><div id="reg">ç”µå­é‚®ä»¶</div></td>
     
      
-     <td width="209"><div id="reg">µØÖ·</div></td>
+     <td width="209"><div id="reg">åœ°å€</div></td>
      </tr>
      <%
      DataBaseConn con=new DataBaseConn();
@@ -36,7 +36,7 @@
      while(rs.next()){
      %>
      <tr align="center">
-     <td width="78" align="center"><a href="delSeeker3.jsp?cuserName=<%=rs.getString(2)%>">É¾³ý</a></td>
+     <td width="78" align="center"><a href="delSeeker3.jsp?cuserName=<%=rs.getString(2)%>">åˆ é™¤</a></td>
      <td width="200" height="22" align="center"><%=rs.getString(3)%></td>
      <td width="194" align="center"></td>
      

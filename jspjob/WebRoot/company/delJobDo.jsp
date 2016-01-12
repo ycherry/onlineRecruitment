@@ -1,4 +1,4 @@
-<%@page contentType="text/html;charset=GB2312"%>
+<%@page contentType="text/html;charset=UTF-8"%>
 <%@page import="com.util.*"%>
 <%@page import="java.sql.*"%>
 <%
@@ -9,12 +9,12 @@ ShowErrorBox show=new ShowErrorBox();
 if(strId!=null){
 int intT=data.delete("DELETE FROM t_pubjob WHERE jobid="+strId);
 if(intT>0){
-out.print("<script>alert('É¾³ı³É¹¦!');document.location='index1.html';</script>");
+out.print("<script>alert('åˆ é™¤æˆåŠŸ!');document.location='index1.html';</script>");
 }
 else{
-out.print(show.errorBox("Êı¾İ¿â´íÎó","ĞÅÏ¢´íÎó"));
+out.print(show.errorBox("æ•°æ®åº“é”™è¯¯","ä¿¡æ¯é”™è¯¯"));
 }
 }else{
-out.print(show.errorBox("ÄãµÇÂ½¹ı?","¾¯¸æĞÅÏ¢"));
+out.print(show.errorBox("ä½ ç™»é™†è¿‡?","è­¦å‘Šä¿¡æ¯"));
 }
 %>

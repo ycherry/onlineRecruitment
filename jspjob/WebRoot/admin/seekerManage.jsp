@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="com.util.*" %>
 
@@ -13,21 +13,21 @@
   <table  height="500" border="0" align="center" cellpadding="0"
   cellspacing="0" bgcolor="#FFFFFF">
   <tr>
-  <td height="50" align="center"><div id="font">��ְ�߹���</div></td>
+  <td height="50" align="center"><div id="font">求职者管理</div></td>
   </tr>
   <tr>
   <td valign="top"><table  border="1" align="left"
   cellpadding="0" cellspacing="0" bgcolor="#f5f7f7">
   <tr align="center" bgcolor="pink">
-   <td width="78"><div id="reg">����</div></td>
-    <td width="123"><div id="reg">����</div></td>
-    <td width="80"><div id="reg">����</div></td>
-     <td width="67"><div id="reg">�Ա�</div></td>
-     <td width="154"><div id="reg">��������</div></td>
-     <td width="160"><div id="reg">��ҵѧУ</div></td>
-     <td width="150"><div id="reg">��ѧרҵ</div></td>
-     <td width="105"><div id="reg">ѧ��</div></td>
-     <td width="206"><div id="reg">�����ʼ�</div></td>
+   <td width="78"><div id="reg">操作</div></td>
+    <td width="123"><div id="reg">姓名</div></td>
+    <td width="80"><div id="reg">年龄</div></td>
+     <td width="67"><div id="reg">性别</div></td>
+     <td width="154"><div id="reg">出生日期</div></td>
+     <td width="160"><div id="reg">毕业学校</div></td>
+     <td width="150"><div id="reg">所学专业</div></td>
+     <td width="105"><div id="reg">学历</div></td>
+     <td width="206"><div id="reg">电子邮件</div></td>
 	 
      </tr>
      <%
@@ -36,16 +36,16 @@
      while(rs.next()){
      %>
      <tr align="center">
-     <td width="78" align="center"><a href="delSeeker.jsp?auserName=<%=rs.getString(2)%>">ɾ��</a></td>
+     <td width="78" align="center"><a href="delSeeker.jsp?auserName=<%=rs.getString(2)%>">删除</a></td>
      <td width="123" align="center"><%=rs.getString(3)%></td>
      <td width="101" align="center"><%=rs.getString(4)%></td>
      <td width="67" align="center">
      <% 
      if(rs.getInt(5)==1){
-     out.print("��");
+     out.print("男");
      }
      else{
-     out.print("Ů");
+     out.print("女");
      }
      %></td>
      <td width="124" align="center"><%=rs.getDate(6)%></td>

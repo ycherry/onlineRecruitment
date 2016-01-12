@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 
 
 
@@ -17,33 +17,33 @@
 			<table width="696"border="0" align="left" cellpadding="0" cellspacing="0"bgcolor="#F5f7f7">
 				<tr align="center">
 					<td height="27"colspan="2">
-						<div id="reg"><font color=red>·¢²¼ÇóÖ°ÐÅÏ¢</font></div>
+						<div id="reg"><font color=red>å‘å¸ƒæ±‚èŒä¿¡æ¯</font></div>
 					</td>
 				</tr>
 				<tr>
-					<td width="164"height="22"align="center">ÆÚÍûÐÐÒµ</td>
+					<td width="164"height="22"align="center">æœŸæœ›è¡Œä¸š</td>
 				  <td width="532" height="40"align="left"><input type="text"name="specialty" value=""></td>
 				</tr>
 				<tr>
-					<td height="22"align="center">ÆÚÍûÖ°Î»:</td>
+					<td height="22"align="center">æœŸæœ›èŒä½:</td>
 				  <td height="40" align="left"><input type="text"name="jobName"></td>
 				</tr>
 				<tr>
-					<td height="22"align="center">ÆÚÍûÐ½Ë®:</td>
-				  <td height="40" align="left"><input type="text"name="salary"value="ÃæÒé"></td>
+					<td height="22"align="center">æœŸæœ›è–ªæ°´:</td>
+				  <td height="40" align="left"><input type="text"name="salary"value="é¢è®®"></td>
 				</tr>
 				<tr>
-					<td height="22"align="center">ÓÐÐ§Ê±¼ä</td>
-				  <td height="40" align="left"><input type="text"name="atime">Äê-ÔÂ-ÈÕ</td>
+					<td height="22"align="center">æœ‰æ•ˆæ—¶é—´</td>
+				  <td height="40" align="left"><input type="text"name="atime">å¹´-æœˆ-æ—¥</td>
 				</tr>
 				<tr>
-					<td width="164"height="140"align="center">ÆäËûÒªÇó:</td>
-				  <td width="532"align="left"><textarea name="other"cols="35"rows="7">ÎÞ</textarea></td>
+					<td width="164"height="140"align="center">å…¶ä»–è¦æ±‚:</td>
+				  <td width="532"align="left"><textarea name="other"cols="35"rows="7">æ— </textarea></td>
 				</tr>
 				<tr align="center">
-					<td height="199"colspan="2" valign="top"><input type="submit"name="Submit"value="·¢²¼">
+					<td height="199"colspan="2" valign="top"><input type="submit"name="Submit"value="å‘å¸ƒ">
 					&nbsp;&nbsp;
-				  <input type="reset"name="Reset"value="ÖØÖÃ"></td>
+				  <input type="reset"name="Reset"value="é‡ç½®"></td>
 				</tr>
 
 		</table>

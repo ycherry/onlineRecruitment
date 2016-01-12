@@ -1,12 +1,12 @@
-<%@ page contentType="text/html;charset=GB2312"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="com.util.*,javax.servlet.http.HttpServletRequest"%>
 <%
 	//request.setCharacterEncoding("GBK");
 %>
 <jsp:useBean id="applyJob" scope="request" class="com.job.domain.ApplyJob" />
-<!--¹¹ÔìapplyJob¶ÔÏó-->
+<!--æ„é€ applyJobå¯¹è±¡-->
 <jsp:setProperty name="applyJob" property="*" />
-<!--ÉèÖÃ¶ÔÏóapplyJobµÄÊôĞÔ-->
+<!--è®¾ç½®å¯¹è±¡applyJobçš„å±æ€§-->
 <%
 	DataBaseOperation data = new DataBaseOperation();
 	DealTime time = new DealTime();
@@ -29,10 +29,10 @@
 					+ applyJob.getAtime()
 					+ "','" + str.toGb(applyJob.getOther()) + "')");
 	if (intT <= 0) {
-		out.print(show.errorBox("·¢²¼Ê§°Ü,Äã¿ÉÄÜÒÑ¾­ÏÂÏßÇëĞÂµÇÂ½!", "´íÎóĞÅÏ¢"));
+		out.print(show.errorBox("å‘å¸ƒå¤±è´¥,ä½ å¯èƒ½å·²ç»ä¸‹çº¿è¯·æ–°ç™»é™†!", "é”™è¯¯ä¿¡æ¯"));
 		return;
 	} else {
 		out
-				.print("<script>alert('·¢²¼³É¹¦~!!');document.location='index1.html'</script>");
+				.print("<script>alert('å‘å¸ƒæˆåŠŸ~!!');document.location='index1.html'</script>");
 	}
 %>

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=GBK" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="com.util.*,javax.servlet.http.HttpServletRequest"%>
 <%//request.setCharacterEncoding("GBK"); %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -65,31 +65,31 @@ body {
  <body LINK=firebrick VLINK=#660000 ALINK=red>
   <div  style="height:100%;">
   <ul id="navigation">
-    <li> <a class="head">������Ϣ����</a>
+    <li> <a class="head">基本信息管理</a>
       <ul>
-        <li><a href="reginfo1.jsp" target="mainFrame">�޸Ļ�����Ϣ</a></li>
+        <li><a href="reginfo1.jsp" target="mainFrame">修改基本信息</a></li>
       </ul>
     </li>
-    <li> <a class="head">��ְ����</a>
+    <li> <a class="head">求职管理</a>
       <ul>
-        <li><a href="pubJob.jsp" target="mainFrame">������ְ��Ϣ</a></li>
-        <li><a href="delJobSelect.jsp" target="mainFrame">ɾ����ְ��Ϣ</a></li>
+        <li><a href="pubJob.jsp" target="mainFrame">发布求职信息</a></li>
+        <li><a href="delJobSelect.jsp" target="mainFrame">删除求职信息</a></li>
       </ul>
     </li>
-    <li> <a class="head">���ְλ</a>
+    <li> <a class="head">浏览职位</a>
       <ul>
-        <li><a href="findJob.jsp" target="mainFrame">���ȫ��ְλ</a></li>
-        <li><a href="search.jsp" target="mainFrame">ְλ����</a></li>
+        <li><a href="findJob.jsp" target="mainFrame">浏览全部职位</a></li>
+        <li><a href="search.jsp" target="mainFrame">职位搜索</a></li>
       </ul>
     </li>
-    <li> <a class="head">�ʼ�����</a>
+    <li> <a class="head">邮件管理</a>
       <ul>
-        <li><a href="../mail/index.jsp" target="mainFrame">�����ʼ�</a></li>
+        <li><a href="../mail/index.jsp" target="mainFrame">发送邮件</a></li>
       </ul>
     </li>
-    <li> <a class="head">����</a>
+    <li> <a class="head">其他</a>
       <ul>
-        <li><a href="../logout.jsp" target="_parent"">�˳�</a></li>
+        <li><a href="../logout.jsp" target="_parent"">退出</a></li>
       </ul>
     </li>
   </ul>

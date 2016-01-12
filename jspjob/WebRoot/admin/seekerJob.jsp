@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="com.util.*" %>
 
@@ -13,21 +13,21 @@
   <table height="500" border="0" align="center" cellpadding="0"
   cellspacing="0" bgcolor="#FFFFFF">
   <tr>
-  <td height="50" align="center"><div id="font">ÇóÖ°ÐÅÏ¢¹ÜÀí</div></td>
+  <td height="50" align="center"><div id="font">æ±‚èŒä¿¡æ¯ç®¡ç†</div></td>
   </tr>
   <tr>
   <td valign="top"><table border="1" align="left"
   cellpadding="0" cellspacing="0" bgcolor="#f5f7f7">
   <tr align="center" bgcolor="blue">
-  <td width="60"><div id="reg">²Ù×÷</div>
+  <td width="60"><div id="reg">æ“ä½œ</div>
     </td>
-  <td width="60" height="22"><div id="reg">±àºÅ</div></td>
-   <td width="100"><div id="reg">ÓÃ»§Ãû</div></td>
-    <td width="150"><div id="reg">ÆÚÍûÖ°Î»</div></td>
-     <td width="120"><div id="reg">Ð½×ÊÒªÇó</div></td>
-     <td width="200"><div id="reg">·¢²¼ÈÕÆÚ</div></td>
-     <td width="200"><div id="reg">ÓÐÐ§ÈÕÆÚ</div></td>
-     <td width="250"><div id="reg">±¸×¢ÐÅÏ¢</div></td>
+  <td width="60" height="22"><div id="reg">ç¼–å·</div></td>
+   <td width="100"><div id="reg">ç”¨æˆ·å</div></td>
+    <td width="150"><div id="reg">æœŸæœ›èŒä½</div></td>
+     <td width="120"><div id="reg">è–ªèµ„è¦æ±‚</div></td>
+     <td width="200"><div id="reg">å‘å¸ƒæ—¥æœŸ</div></td>
+     <td width="200"><div id="reg">æœ‰æ•ˆæ—¥æœŸ</div></td>
+     <td width="250"><div id="reg">å¤‡æ³¨ä¿¡æ¯</div></td>
      
      </tr>
      <%
@@ -37,7 +37,7 @@
      %>
       
      <tr align="center">
-     <td width="60" align="center"><a href="delSeeker2.jsp?jobid=<%=rs.getString(1)%>">É¾³ý</a></td>
+     <td width="60" align="center"><a href="delSeeker2.jsp?jobid=<%=rs.getString(1)%>">åˆ é™¤</a></td>
      <td height="22" align="center"><%=rs.getString(1)%>
     </td>
      <td width="100" align="center"><%=rs.getString(2)%></td>

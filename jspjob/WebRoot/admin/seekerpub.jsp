@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="com.util.*" %>
 
@@ -13,21 +13,21 @@
   <table height="500" border="0" align="center" cellpadding="0"
   cellspacing="0" bgcolor="#FFFFFF">
   <tr>
-  <td height="50" align="center"><div id="font">��Ƹ��Ϣ����</div></td>
+  <td height="50" align="center"><div id="font">招聘信息管理</div></td>
   </tr>
   <tr>
   <td valign="top"><table  border="1" align="left"
   cellpadding="0" cellspacing="0" bgcolor="#f5f7f7">
   <tr align="center" bgcolor="blue">
-  <td><div id="reg">����</div></td>
-  <td height="22"><div id="reg">���</div></td>
-   <td><div id="reg">��ҵ��</div></td>
-    <td><div id="reg">רҵҪ��</div></td>
-     <td><div id="reg">ְλ����</div></td>
-     <td><div id="reg">н��Ҫ��</div></td>
-     <td><div id="reg">��������</div></td>
-     <td><div id="reg">��Ч����</div></td>
-     <td><div id="reg">��ע��Ϣ</div></td>
+  <td><div id="reg">操作</div></td>
+  <td height="22"><div id="reg">编号</div></td>
+   <td><div id="reg">企业名</div></td>
+    <td><div id="reg">专业要求</div></td>
+     <td><div id="reg">职位名称</div></td>
+     <td><div id="reg">薪资要求</div></td>
+     <td><div id="reg">发布日期</div></td>
+     <td><div id="reg">有效日期</div></td>
+     <td><div id="reg">备注信息</div></td>
      
      </tr>
      <%
@@ -36,7 +36,7 @@
      while(rs.next()){
      %>
      <tr align="center">
-     <td align="center"><a href="delSeeker4.jsp?jobid=<%=rs.getString(1)%>">ɾ��</a></td>
+     <td align="center"><a href="delSeeker4.jsp?jobid=<%=rs.getString(1)%>">删除</a></td>
      <td height="22" align="center"><%=rs.getString(1)%></td>
      <td align="center"><%=rs.getString(2)%></td>
      <td align="center"><%=rs.getString(3)%></td>

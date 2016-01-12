@@ -1,10 +1,10 @@
-<%@ page contentType="text/html;charset=gb2312"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="com.util.*,javax.servlet.http.HttpServletRequest"%>
 <%//request.setCharacterEndcoding("GB2312");%>
 <jsp:useBean id="company" class="com.job.domain.Company" scope="request"/>
-<!--¹¹ÔìjobSeekerÀàµÄ¶ÔÏójobSeeker-->
+<!--æ„é€ jobSeekerç±»çš„å¯¹è±¡jobSeeker-->
 <jsp:setProperty name="company" property="*"/>
-<!-- ÉèÖÃ¶ÔÏójobSeekerµÄÊôĞÔ -->
+<!-- è®¾ç½®å¯¹è±¡jobSeekerçš„å±æ€§ -->
 <%
 DealString str=new DealString();
 ShowErrorBox show=new ShowErrorBox();
@@ -17,7 +17,7 @@ company.setAddress(company.getAddress());
 company.setResume(company.getResume());
 out.print("sssss"+cuserName);
 if(company.getEmail().equals("")||company.getTel().equals("")){
-out.print(show.errorBox("ÇëÌîĞ´ÍêÕûĞÅÏ¢!","´íÎóĞÅÏ¢"));
+out.print(show.errorBox("è¯·å¡«å†™å®Œæ•´ä¿¡æ¯!","é”™è¯¯ä¿¡æ¯"));
 return;
 }else{
 DataBaseConn dbc=new DataBaseConn();
@@ -29,12 +29,12 @@ st.addBatch(sql);
 //sql="update t_user set userName="+"'"+company.getCusername()+"'"+"where userName="+"'"+cuserName+"'";
 //st.addBatch(sql);
 st.executeBatch();
-out.print("<script>alert('ĞŞ¸Ä³É¹¦£¡');document.location='index1.html';</script>");
+out.print("<script>alert('ä¿®æ”¹æˆåŠŸï¼');document.location='index1.html';</script>");
 return;
 }
 catch(Exception e)
 {
-  out.print(show.errorBox("ĞŞ¸ÄÊ§°Ü£¬Êı¾İ¿â´íÎó£¡","´íÎóĞÅÏ¢"));
+  out.print(show.errorBox("ä¿®æ”¹å¤±è´¥ï¼Œæ•°æ®åº“é”™è¯¯ï¼","é”™è¯¯ä¿¡æ¯"));
 }
 }
 %>
