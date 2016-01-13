@@ -12,7 +12,7 @@ public class DealString {
 			uniStr="";
 		}
 		try{
-			byte[] tempByte=uniStr.getBytes("utf-8");
+			byte[] tempByte=uniStr.getBytes("iso-8859-1");
 			gbStr=new String(tempByte,"utf-8");
 			System.out.println("DealString被调用");
 		}

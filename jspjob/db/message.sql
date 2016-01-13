@@ -30,7 +30,7 @@ CREATE TABLE `t_applyjob` (
   `atime` varchar(100) default NULL,
   `other` varchar(300) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `t_applyjob`
@@ -53,7 +53,7 @@ CREATE TABLE `t_comment` (
   `content` text,
   `newsId` int(10) unsigned NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `t_comment`
@@ -81,7 +81,7 @@ CREATE TABLE `t_company` (
   `email` varchar(40) default NULL,
   `resume` text,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `t_company`
@@ -111,7 +111,7 @@ CREATE TABLE `t_jobseeker` (
   `email` varchar(40) default NULL,
   `resume` text,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `t_jobseeker`
@@ -136,7 +136,7 @@ CREATE TABLE `t_news` (
   `isDeploy` bit(1) default NULL,
   `deployTime` datetime NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `t_news`
@@ -164,7 +164,7 @@ CREATE TABLE `t_pubjob` (
   `atime` varchar(30) default NULL,
   `other` varchar(200) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `t_pubjob`
@@ -188,7 +188,7 @@ CREATE TABLE `t_user` (
   `userPass` varchar(50) default NULL,
   `userType` varchar(6) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `t_user`

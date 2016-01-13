@@ -1,61 +1,79 @@
 package com.job.domain;
-public class Company{
-private String cusername;  //¹«Ë¾ÓÃ»§ÓÃ»§Ãû
-private String ctruename;  //¹«Ë¾ÕæÊµÐÕÃû
-private String password;   //ÃÜÂë
-private String email;      //¹«Ë¾µØÖ·
-private String tel;        //¹«Ë¾µç»°
-private String manage;     //¹«Ë¾¾­Óª
-private String address;    //¹«Ë¾µØÖ·
-private String resume;     //¹«Ë¾¼òÀú
-public Company(){
-}
-public String getCusername(){
-    return cusername;
-}
-public void setCusername(String cname){
-this.cusername=cname;
-}
-public String getCtruename(){
-	return ctruename;
-}
-public void setCtruename(String cname){
-this.ctruename=cname;
-}
-public String getPassword(){
-	return password;
-}
-public void setPassword(String pword){
-this.password=pword;
-}
-public String getEmail(){
-	return email;
-}
-public void setEmail(String email){
-this.email=email;
-}
-public String getTel(){
-	return tel;
-}
-public void setTel(String tel){
-this.tel=tel;
-}
-public String getManage(){
-	return manage;
-}
-public void setManage(String mage){
-this.manage=mage;
-}
-public String getAddress(){
-	return address;
-}
-public void setAddress(String add){
-this.address=add;
-}
-public String getResume(){
-	return resume;
-}
-public void setResume(String rsume){
-this.resume=rsume;
-}
+
+public class Company {
+	private String cusername; // ï¿½ï¿½Ë¾ï¿½Ã»ï¿½ï¿½Ã»ï¿½ï¿½ï¿½
+	private String ctruename; // ï¿½ï¿½Ë¾ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½
+	private String password; // ï¿½ï¿½ï¿½ï¿½
+	private String email; // ï¿½ï¿½Ë¾ï¿½ï¿½Ö·
+	private String tel; // ï¿½ï¿½Ë¾ï¿½ç»°
+	private String manage; // ï¿½ï¿½Ë¾ï¿½ï¿½Óª
+	private String address; // ï¿½ï¿½Ë¾ï¿½ï¿½Ö·
+	private String resume; // ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½
+
+	public Company() {
+	}
+
+	public String getCusername() {
+		return cusername;
+	}
+
+	public void setCusername(String cname) {
+		this.cusername = cname;
+	}
+
+	public String getCtruename() {
+		return ctruename;
+	}
+
+	public void setCtruename(String cname) {
+		this.ctruename = cname;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String pword) {
+		this.password = pword;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public String getManage() {
+		return manage;
+	}
+
+	public void setManage(String mage) {
+		this.manage = mage;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String add) {
+		this.address = add;
+	}
+
+	public String getResume() {
+		return resume;
+	}
+
+	public void setResume(String rsume) {
+		this.resume = rsume;
+	}
 }
