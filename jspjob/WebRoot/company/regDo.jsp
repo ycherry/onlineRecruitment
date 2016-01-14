@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="utf-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.util.*,javax.servlet.http.HttpServletRequest"%>
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -10,6 +10,7 @@
 <!--设置对象 Company 的属性-->
 <%
 System.out.println("Company:"+Company.getCtruename());
+System.out.println(request.getParameter("ctruename"));
 	DealString str = new DealString();
 	ShowErrorBox show = new ShowErrorBox();
 
