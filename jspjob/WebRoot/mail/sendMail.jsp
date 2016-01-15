@@ -7,8 +7,6 @@
 <%@ page import="java.io.*"%>
 <%@ page import="com.util.*"%>
 <%@ page import="com.jspsmart.upload.*"%>
-<!-- <jsp:useBean id="mySmartUpload" scope="page"
-	class="com.jspsmart.upload.SmartUpload " /> -->
 <%
 	class sendMail {
 		private MimeMessage mimeMsg;
@@ -111,8 +109,8 @@
 		public boolean setBody(String mailBody) {
 			try {
 				BodyPart bp = new MimeBodyPart();
-				bp.setContent("<meta http-equiv=Content-Type content=text/html;charset=gb2312>" + mailBody,
-						"text/html;charset=GB2312");
+				bp.setContent("<meta http-equiv=Content-Type content=text/html;charset=UTF-8>" + mailBody,
+						"text/html;charset=UTF-8");
 				mp.addBodyPart(bp);
 				return true;
 			} catch (Exception e) {
