@@ -7,8 +7,8 @@
 <%@ page import="java.io.*"%>
 <%@ page import="com.util.*"%>
 <%@ page import="com.jspsmart.upload.*"%>
-<jsp:useBean id="mySmartUpload" scope="page "
-	class="com.jspsmart.upload.SmartUpload " />
+<!-- <jsp:useBean id="mySmartUpload" scope="page"
+	class="com.jspsmart.upload.SmartUpload " /> -->
 <%
 	class sendMail {
 		private MimeMessage mimeMsg;
@@ -223,6 +223,7 @@
 	String strMessage = request.getParameter("message");
 	String attachFile = request.getParameter("file");
 	String smtpserver = request.getParameter("smtpserver");
+	System.out.println(strSubject);
 	if (arrstrTo.length > 0) {
 		int intI = 0;
 		for (int i = 0; intI < arrstrTo.length; intI++) {
