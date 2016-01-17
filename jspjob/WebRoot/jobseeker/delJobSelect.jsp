@@ -3,7 +3,7 @@
 <%@page import="java.sql.*"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <link href="../css/left.css" rel="stylesheet" type="text/css">
 </head>
 <body topmargin="0px">

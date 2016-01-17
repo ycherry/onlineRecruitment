@@ -17,10 +17,15 @@ System.out.println(request.getParameter("ctruename"));
 	DataBaseConn dbc = new DataBaseConn();
 	try {
 		java.sql.Statement st = dbc.getStmt();
-		String sql = "insert into t_company(cuserName,ctrueName,tel,manage,address,email,resume) values('"
+/*		String sql = "insert into t_company(cuserName,ctrueName,tel,manage,address,email,resume) values('"
 				+ Company.getCusername() + "','" + str.toGb(Company.getCtruename()) + "','" + Company.getTel()
 				+ "','" + str.toGb(Company.getManage()) + "','" + str.toGb(Company.getAddress()) + "','"
 				+ str.toGb(Company.getEmail()) + "','" + str.toGb(Company.getResume()) + "')";
+*/
+		String sql = "insert into t_company(cuserName,ctrueName,tel,manage,address,email,resume) values('"
+				+ Company.getCusername() + "','" +Company.getCtruename() + "','" + Company.getTel()
+				+ "','" + Company.getManage() + "','" + Company.getAddress() + "','"
+				+ Company.getEmail() + "','" + Company.getResume() + "')";
 		st.addBatch(sql);
 		System.out.println(sql);
 		sql = "insert into t_user(userName,userPass,userType)values('" + Company.getCusername() + "','"

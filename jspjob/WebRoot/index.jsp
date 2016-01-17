@@ -1,39 +1,93 @@
-<%@ page contentType="text/html;charset=UTF-8" import="java.util.*"%>
+<%@page contentType="text/html;charset=UTF-8" import="java.util.*"%>
 <%@page import="com.job.dao.NewsDao"%>
 <%@page import="com.job.domain.News"%>
 <html>
+<head>
 <title>欢迎登陆人才招聘网</title>
-<style type="text/css">
-<!--
-.STYLE2 {
-	color: #000000
-}
+<script type="text/javascript" src="Js/jquery.js"></script>
+<script type="text/javascript" src="Js/bootstrap.js"></script>
+<link rel="stylesheet" type="stylesheet" href="css/bootstrap.css">
+</head>
+<body style="text-align: center;" width="80%">
+	<form role="form" name="login" action="login.jsp" width="80%">
+		<div class="row">
+			<img src="images/topimg1.jpg" height="90%" />
+		</div>
+		<div class="row">
+			<div class="col-md-6">需要添加其它内容</div>
+			<div class="col-md-6">
+				<div class="row form-group">
+					<div class="col-md-offset-2 col-md-2">
+						<label for="userName">用户名:</label>
+					</div>
+					<div class="col-md-6">
+						<input type="text" class="form-control" id="user" name="user"
+							placeholder="请输入您的用户名">
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-offset-2 col-md-2">
+						<label for="pwd">密码:</label>
+					</div>
+					<div class="col-md-6">
+						<input type="password" class="form-control" id="password"
+							name="password" placeholder="请输入您的密码">
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-offset-2 col-md-4	">
+						<label> <input type="radio" name="type" id="userType1"
+							value="1" checked> 个人用户
+						</label>
+					</div>
+					<div class="col-md-4">
+						<label> <input type="radio" name="type" id="userType1"
+							value="2"> 企业用户
+						</label>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-offset-2 col-md-5">
+						<button type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;立即登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					</div>
+					<div class="col-md-3">
+						<button type="reset" class="btn btn-default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重置&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					</div>
 
-.STYLE7 {
-	font-size: 16px
-}
+				</div>
+				<div class="row form-group">
+					<div class="col-md-offset-2 col-md-5">
+						<button type="button" class="btn btn-info"
+							onclick="window.location.href='jobseeker/reg.html'">
+							&nbsp;&nbsp;&nbsp;&nbsp;个人用户注册&nbsp;&nbsp;&nbsp;&nbsp;</a>
+						</button>
+					</div>
+					<div class="col-md-3">
+						<button type="button" class="btn btn-info"
+							onclick="window.location.href='company/reg.html'">
+							&nbsp;&nbsp;&nbsp;&nbsp;企业用户注册&nbsp;&nbsp;&nbsp;&nbsp;</a>
+						</button>
+					</div>
 
-.STYLE10 {
-	font-size: 20px;
-	font-weight: bold;
-	color: #FFFFFF;
-}
--->
-</style>
-<body style="margin: 0px; padding: 0px; text-align: center;">
-	<form name="login" action="login.jsp">
-		<table width="810" height="591" border="0" bordercolor="#C8D5E4" align="center">
+				</div>
+			</div>
+		</div>
+	</form>
+	<!--	<form role="form" name="login" action="login.jsp">
+		<table width="810" height="591" border="0" bordercolor="#C8D5E4"
+			align="center">
 			<tr>
 				<td height="152" colspan="4"><img src="images/topimg1.jpg"
 					width="100%" height="90%" /></td>
 			</tr>
 			<tr bgcolor="#D74404">
-				<td height="28" align="right"><span class="STYLE10" align="right">在线简历填写</span></td>
-				<td align="left"><a
-					href="/jspjob/jobseeker/pubJob.jsp" class="back STYLE7">简历填写</a></td>
+				<td height="28" align="right"><span class="STYLE10"
+					align="right">在线简历填写</span></td>
+				<td align="left"><a href="/jspjob/jobseeker/pubJob.jsp"
+					class="back STYLE7">简历填写</a></td>
 			</tr>
 
-	<!--		<tr>
+					<tr>
 				<td width="900" rowspan="6" align="left" valign="top">
 					<table width="596" border="0" cellspacing="0" cellpadding="0">
 							<tr>
@@ -57,7 +111,7 @@
 					</table>
 				</td>
 			</tr>
-		-->
+		
 			<tr>
 				<td width="151" height="40" align="right" bgcolor="#C8D5E4"><span
 					class="STYLE2"> 用户名: </span></td>
@@ -77,8 +131,8 @@
 						<input type=radio name="type" value=1 checked> <font
 						size="2">个人求职</font>
 				</span></td>
-				<td width="144" height="40"><span class="STYLE2" > <input
-						type=radio name="type" value=2> <font size="2" >企业招聘</font>
+				<td width="144" height="40"><span class="STYLE2"> <input
+						type=radio name="type" value=2> <font size="2">企业招聘</font>
 				</span></td>
 			</tr>
 			<tr bgcolor="#C8D5E4">
@@ -88,17 +142,20 @@
 					value="重置"></td>
 			</tr>
 			<tr bgcolor="#C8D5E4">
-				<td width="151" height="37" align="right"><a href="company/reg.html"><img
-						src="images/company_regsiter.gif" /> </a></td>
+				<td width="151" height="37" align="right"><a
+					href="company/reg.html"><img src="images/company_regsiter.gif" />
+				</a></td>
 				<td width="144" height="37"><a href="jobseeker/reg.html"><img
 						src="images/person_regsiter.gif" /> </a></td>
 			</tr>
 			<tr>
-			<td align="right"><img src="images/421_7831.gif" width="270" /></td>
-			<td><img src="images/7992.gif" width="270" /></td>
-	<!-- 	<td><img src="images/907.gif" width="270" /></td>  -->	
-			</tr> 
+				<td align="right"><img src="images/421_7831.gif" width="270" /></td>
+				<td><img src="images/7992.gif" width="270" /></td>
+					<td><img src="images/907.gif" width="270" /></td>  
+			</tr>
 		</table>
 	</form>
+	
+-->
 </body>
 </html>
