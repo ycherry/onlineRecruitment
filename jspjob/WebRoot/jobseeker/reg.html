@@ -1,106 +1,185 @@
-<html>
+<html ng-app="myModule">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>注册</title>
+<script type="text/javascript" src="../Js/util/jquery.js"></script>
+<script type="text/javascript" src="../Js/util/bootstrap.js"></script>
+<script type="text/javascript" src="../Js/util/angular.js"></script>
+<script type="text/javascript" src="../Js/company/reg.js"></script>
+<link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css.map">
+<link rel="stylesheet" type="stylesheet" href="../css/common.css">
 <link href="../css/default.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" language="javascript">
-	function check() {
-		var username = document.getElementById("usernameId").value;
-		var password = document.getElementById("passwordId").value;
-		if (username.length == 0) {
-			alert("username should not be blank");
-			return false;
-		}
-		if (password.length == 0) {
-			alert("password should not be blank");
-			return false;
-		}
-		return true;
-	}
-</script>
 </head>
-<body style="margin: 0px;">
-	<form name="form" method="post" action="regDo.jsp"
-		onsubmit="return check();">
-		<table width="900" border="0" align="center" cellpadding="0"
-			cellspacing="0" bgcolor="#F5f7f7">
-			<tr>
-				<td colspan="2"><img src="../images/head.jpg" /></td>
-			</tr>
-			<tr align="center">
-				<td height="40" colspan="2">
-					<div id="reg">
-						<font color=red> 求职者注册</font>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td width="196" height="22" align="center">用&nbsp;户&nbsp; 名:</td>
-				<td width="389"><input type="text" name="susername"
-					id="username"></td>
-			</tr>
-			<tr>
-				<td height="22" align="center">密&nbsp;&nbsp;&nbsp;&nbsp;码:</td>
-				<td><input type="password" name="password" id="password">
-				</td>
-			</tr>
-			<tr>
-				<td height="22" align="center">密码确认:</td>
-				<td><input type="password" name="rpassword" id="repass">
-				</td>
-			</tr>
-			<tr>
-				<td width="196" height="22" align="center">真实姓名:</td>
-				<td width="389"><input type="text" name="struename"></td>
-			</tr>
-			<tr>
-				<td width="196" height="22" align="center">
-					年&nbsp;&nbsp;&nbsp;&nbsp;龄:</td>
-				<td width="389"><input type="text" name="age"></td>
-			</tr>
-			<tr>
-				<td width="196" height="22" align="center">
-					性&nbsp;&nbsp;&nbsp;&nbsp;别:</td>
-				<td width="389"><input type="radio" name="sex" value="1"
-					checked> 男 <input type="radio" name="sex" value="0">
-					女</td>
-			</tr>
-			<tr>
-				<td width="196" height="22" align="center">出生日期:</td>
-				<td width="389"><input type="text" name="birthday">
-					年-月-日</td>
-			</tr>
-			<tr>
-				<td width="196" height="22" align="center">毕业院校:</td>
-				<td width="389"><input type="text" name="school" value="不详">
-				</td>
-			</tr>
-			<tr>
-				<td width="196" height="22" align="center">电子邮件:</td>
-				<td width="389"><input type="text" name="email"></td>
-			</tr>
-			<tr>
-				<td width="196" height="22" align="center">所学专业:</td>
-				<td width="389"><input type="text" name="specialty" value="不祥">
-				</td>
-			</tr>
-			<tr>
-				<td width="196" height="22" align="center">最高学历:</td>
-				<td width="389"><input type="text" name="knowledge" value="不祥">
-				</td>
-			</tr>
-			<tr>
-				<td width="196" height="22" align="center">个人简历:</td>
-				<td width="389"><textarea name="resume" cols="35" rows="5">无</textarea>
-				</td>
-			</tr>
-			<tr align="center">
-				<td height="35" colspan="2"><input type="submit" name="Submit"
-					value="注册" onClick="return reg()> &nbsp;&nbsp; <input
-					type="reset" name="Reset" value="重置"></td>
-			</tr>
+<body ng-controller="myCtrl">
+	<form role="form" name="jobseekerRegisterForm" method="post"
+		action="regDo.jsp" novalidate>
+		<div class="container" align="center">
+			<div class="row">
+				<img src="../images/topimg1.jpg" />
+			</div>
+			<div class="row regTitle">
+				<font color="red"><strong>求职者注册</strong></font>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>用户名:</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" class="form-control" name="susername"
+						placeholder="请输入您的用户名（必填）" ng-model="susername" required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="jobseekerRegisterForm.susername.$error.required &&jobseekerRegisterForm.susername.	$dirty">用户名不能为空!</span>
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>密码:</label>
+				</div>
+				<div class="col-md-3">
+					<input type="password" class="form-control" name="password"
+						placeholder="请输入6-16位数的密码（必填）" ng-model="password"
+						ng-minlength="6" ng-maxlength="16" required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="jobseekerRegisterForm.password.$error.required &&jobseekerRegisterForm.password.$dirty">密码不能为空!</span>
+					<span class="invalid"
+						ng-show="jobseekerRegisterForm.password.$error.minlength&&jobseekerRegisterForm.password.$dirty">密码长度不能小于6!</span>
+					<span class="invalid"
+						ng-show="jobseekerRegisterForm.password.$error.maxlength&&jobseekerRegisterForm.password.$dirty">密码长度不能大于16!</span>
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>确认密码:</label>
+				</div>
+				<div class="col-md-3">
+					<input type="password" class="form-control" name="repassword"
+						placeholder="请再一次输入您的密码（必填）" ng-model="repassword"
+						ng-blur="checkPassword()" required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="jobseekerRegisterForm.repassword.$error.required &&jobseekerRegisterForm.repassword.$dirty">确认密码不能为空!</span>
+					<span class="invalid"
+						ng-show="!passwordChecked&&jobseekerRegisterForm.repassword.$dirty ">两次密码不一致!</span>
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>真实姓名:</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" class="form-control" name="struename"
+						placeholder="请输入真实姓名（必填）" ng-model="struename" required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="jobseekerRegisterForm.struename.$error.required &&jobseekerRegisterForm.struename.$dirty">真实姓名不能为空!</span>
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>年龄:</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" class="form-control" name="age"
+						placeholder="请输入您的年龄" ng-model="age">
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>性别:</label>
+				</div>
+				<div class=" col-md-1">
+					<label> <input type="radio" name="sex" id="userType1"
+						value="1" checked> 男
+					</label>
+				</div>
+				<div class="col-md-1">
+					<label> <input type="radio" name="sex" id="userType1"
+						value="0"> 女
+					</label>
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>出生日期:</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" class="form-control" name="birthday"
+						placeholder="请输入您的出省日期(年-月-日)" ng-model="birthday">
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>毕业院校:</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" class="form-control" name="school"
+						placeholder="请输入您的学校" ng-model="school">
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>电子邮件:</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" class="form-control" name="email"
+						placeholder="请输入邮箱（必填）" ng-model="email" required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="jobseekerRegisterForm.email.$error.required &&jobseekerRegisterForm.email.$dirty">邮箱地址不能为空!</span>
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>所学专业:</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" class="form-control" name="specialty"
+						placeholder="请输入您所学专业" ng-model="specialty">
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>最高学历:</label>
+				</div>
+				<div class="col-md-3">
+					<input type="text" class="form-control" name="knowledge"
+						placeholder="本科、硕士、博士。。。" ng-model="knowledge">
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-3 col-md-2">
+					<label>个人简介:</label>
+				</div>
+				<div class="col-md-3">
+					<textarea type="text" class="form-control" name="resume"
+						placeholder="请介绍一下您自己"></textarea>
+				</div>
+			</div>
+			<div class="row labelStyle">
+				<div class="col-md-offset-4 col-md-2">
+					<button type="submit" name="Submit" class="btn btn-primary"
+						ng-disabled="jobseekerRegisterForm.$invalid">&nbsp;&nbsp;&nbsp;&nbsp;注&nbsp;&nbsp;&nbsp;&nbsp;册&nbsp;&nbsp;&nbsp;&nbsp;</button>
 
-		</table>
+				</div>
+				<div class=" col-md-2">
+					<button type="reset" name="reset" class="btn btn-default">&nbsp;&nbsp;&nbsp;&nbsp;重&nbsp;&nbsp;&nbsp;&nbsp;置&nbsp;&nbsp;&nbsp;&nbsp;</button>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-offset-4 col-md-2">
+					<span class="invalid" ng-show="jobseekerRegisterForm.$invalid">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请按要求填数据!</span>
+				</div>
+			</div>
+		</div>
 	</form>
 </body>
 </html>
