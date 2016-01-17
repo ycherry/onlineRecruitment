@@ -1,0 +1,13 @@
+.labelStyle{
+	text-align:right;
+	margin:10px;
+	align:center;
+}
+.invalid{
+	color:red;
+	text-align:left;
+}
+body {
+	text-align: center;
+	align: center;
+}

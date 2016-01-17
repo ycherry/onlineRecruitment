@@ -1,29 +1,38 @@
-<html>
+<html ng-app="myModule">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>注册</title>
-<link href="../css/default.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="../Js/jquery.js"></script>
-<script type="text/javascript" src="../Js/bootstrap.js"></script>
+<script type="text/javascript" src="../Js/util/jquery.js"></script>
+<script type="text/javascript" src="../Js/util/bootstrap.js"></script>
+<script type="text/javascript" src="../Js/util/angular.js"></script>
+<script type="text/javascript" src="../Js/company/reg.js"></script>
 <link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css.map">
 <link rel="stylesheet" type="stylesheet" href="../css/reg.css">
+<link rel="stylesheet" type="stylesheet" href="../css/common.css">
+<link href="../css/default.css" rel="stylesheet" type="text/css">
 </head>
-<body >
-	<form role="form" name="form" method="post" action="regDo.jsp">
+<body ng-controller="myCtrl">
+	<form role="form" name="compnyRegisterForm" method="post"
+		action="regDo.jsp" novalidate>
 		<div class="container" align="center">
 			<div class="row">
 				<img src="../images/topimg1.jpg" />
 			</div>
-			<div class="row regTitle" >
-				<font color="red" ><strong>企业注册</strong></font>
+			<div class="row regTitle">
+				<font color="red"><strong>企业注册</strong></font>
 			</div>
 			<div class="row labelStyle">
 				<div class="col-md-offset-3 col-md-2">
 					<label>用户名:</label>
 				</div>
 				<div class="col-md-3">
-					<input type="text" class="form-control"  name="cusername"
-						placeholder="请输入您的用户名">
+					<input type="text" class="form-control" name="cusername"
+						placeholder="请输入您的用户名（必填）" ng-model="cusername" required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="compnyRegisterForm.cusername.$error.required &&compnyRegisterForm.cusername.$dirty">用户名不能为空!</span>
 				</div>
 			</div>
 			<div class="row labelStyle">
@@ -31,79 +40,113 @@
 					<label>密码:</label>
 				</div>
 				<div class="col-md-3">
-					<input type="password" class="form-control"  name="password"
-						placeholder="请输入您的密码">
+					<input type="password" class="form-control" name="password"
+						placeholder="请输入6-16位数的密码（必填）" ng-model="password" ng-minlength="6"
+						ng-maxlength="16" required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="compnyRegisterForm.password.$error.required &&compnyRegisterForm.password.$dirty">密码不能为空!</span>
+					<span class="invalid"
+						ng-show="compnyRegisterForm.password.$error.minlength&&compnyRegisterForm.password.$dirty">密码长度不能小于6!</span>
+					<span class="invalid"
+						ng-show="compnyRegisterForm.password.$error.maxlength&&compnyRegisterForm.password.$dirty">密码长度不能大于16!</span>
 				</div>
 			</div>
-			<div class="row labelStyle" >
+			<div class="row labelStyle">
 				<div class="col-md-offset-3 col-md-2">
 					<label>确认密码:</label>
 				</div>
 				<div class="col-md-3">
 					<input type="password" class="form-control" name="repassword"
-						placeholder="请再一次输入您的密码">
+						placeholder="请再一次输入您的密码（必填）" ng-model="repassword" ng-focus="checkPassword()"required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="compnyRegisterForm.repassword.$error.required &&compnyRegisterForm.repassword.$dirty">确认密码不能为空!</span>
+					<span class="invalid" ng-show="!passwordChecked&&compnyRegisterForm.repassword.$dirty ">两次密码不一致!</span>
 				</div>
 			</div>
-			<div class="row labelStyle" >
+			<div class="row labelStyle">
 				<div class="col-md-offset-3 col-md-2">
 					<label>企业名称:</label>
 				</div>
 				<div class="col-md-3">
-					<input type="text" class="form-control"  name="ctruename"
-						placeholder="请输入企业名称">
+					<input type="text" class="form-control" name="ctruename"
+						placeholder="请输入企业名称（必填）" ng-model="ctruename" required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="compnyRegisterForm.ctruename.$error.required &&compnyRegisterForm.ctruename.$dirty">企业名称不能为空!</span>
 				</div>
 			</div>
-			<div class="row labelStyle" >
+			<div class="row labelStyle">
 				<div class="col-md-offset-3 col-md-2">
 					<label>企业电话:</label>
 				</div>
 				<div class="col-md-3">
-					<input type="text" class="form-control"  name="tel"
-						placeholder="请输入企业电话">
+					<input type="text" class="form-control" name="tel"
+						placeholder="请输入企业电话（必填）" ng-model="tel" required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="compnyRegisterForm.tel.$error.required &&compnyRegisterForm.tel.$dirty">电话不能为空!</span>
 				</div>
 			</div>
-			<div class="row labelStyle" >
+			<div class="row labelStyle">
 				<div class="col-md-offset-3 col-md-2">
 					<label>企业地点:</label>
 				</div>
 				<div class="col-md-3">
-					<input type="text" class="form-control"  name="address"
-						placeholder="请输入企业地点">
+					<input type="text" class="form-control" name="address"
+						placeholder="请输入企业地点（必填）" ng-model="address" required>
+				</div>
+				<div class="col-md-2">
+					<span class="invalid"
+						ng-show="compnyRegisterForm.address.$error.required &&compnyRegisterForm.address.$dirty">电话不能为空!</span>
 				</div>
 			</div>
-			<div class="row labelStyle" >
+			<div class="row labelStyle">
 				<div class="col-md-offset-3 col-md-2">
 					<label>企业信息:</label>
 				</div>
 				<div class="col-md-3">
-					<input type="text" class="form-control"  name="manage"
-						placeholder="请输入企业信息">
+					<input type="text" class="form-control" name="manage"
+						placeholder="请输入企业信息（必填）">
 				</div>
 			</div>
-			<div class="row labelStyle" >
+			<div class="row labelStyle">
 				<div class="col-md-offset-3 col-md-2">
 					<label>电子邮件:</label>
 				</div>
 				<div class="col-md-3">
-					<input type="text" class="form-control"  name="email"
-						placeholder="请输入邮箱地址称">
+					<input type="text" class="form-control" name="email"
+						placeholder="请输入邮箱地址称（必填）">
 				</div>
 			</div>
-			<div class="row labelStyle" >
+			<div class="row labelStyle">
 				<div class="col-md-offset-3 col-md-2">
 					<label>企业简介:</label>
 				</div>
 				<div class="col-md-3">
-					<textarea type="text" class="form-control"  name="resume"
+					<textarea type="text" class="form-control" name="resume"
 						placeholder="请介绍一下您的公司吧"></textarea>
 				</div>
 			</div>
-			<div class="row labelStyle" >
+			<div class="row labelStyle">
 				<div class="col-md-offset-4 col-md-2">
-					<button type="submit" name="Submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;注&nbsp;&nbsp;&nbsp;&nbsp;册&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					<button type="submit" name="Submit" class="btn btn-primary"
+						ng-disabled="compnyRegisterForm.$invalid">&nbsp;&nbsp;&nbsp;&nbsp;注&nbsp;&nbsp;&nbsp;&nbsp;册&nbsp;&nbsp;&nbsp;&nbsp;</button>
+
 				</div>
-				<div class="col-md-2">
+				<div class=" col-md-2">
 					<button type="reset" name="reset" class="btn btn-default">&nbsp;&nbsp;&nbsp;&nbsp;重&nbsp;&nbsp;&nbsp;&nbsp;置&nbsp;&nbsp;&nbsp;&nbsp;</button>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-offset-4 col-md-2">
+					<span class="invalid" ng-show="compnyRegisterForm.$invalid">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请按要求填数据!</span>
 				</div>
 			</div>
 		</div>

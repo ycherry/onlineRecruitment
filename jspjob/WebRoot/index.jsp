@@ -1,41 +1,53 @@
 <%@page contentType="text/html;charset=UTF-8" import="java.util.*"%>
 <%@page import="com.job.dao.NewsDao"%>
 <%@page import="com.job.domain.News"%>
-<html>
+<html ng-app="myModule">
 <head>
 <title>欢迎登陆人才招聘网</title>
-<script type="text/javascript" src="Js/jquery.js"></script>
-<script type="text/javascript" src="Js/bootstrap.js"></script>
+<script type="text/javascript" src="Js/util/jquery.js"></script>
+<script type="text/javascript" src="Js/util/bootstrap.js"></script>
+<script type="text/javascript" src="Js/util/angular.js"></script>
+<script type="text/javascript" src="Js/company/reg.js"></script>
 <link rel="stylesheet" type="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" type="stylesheet" href="	css/index.css">
+<link rel="stylesheet" type="stylesheet" href="	css/common.css">
 </head>
-<body style="text-align: center;" width="80%">
-	<form role="form" name="login" action="login.jsp" width="80%">
+<body  ng-controller="myCtrl">
+	<form role="form" name="login" action="login.jsp">
 		<div class="row">
 			<img src="images/topimg1.jpg" height="90%" />
 		</div>
 		<div class="row">
 			<div class="col-md-6">需要添加其它内容</div>
 			<div class="col-md-6">
-				<div class="row form-group">
-					<div class="col-md-offset-2 col-md-2">
+				<div class="row form-group labelStyle">
+					<div class=" col-md-2">
 						<label for="userName">用户名:</label>
 					</div>
 					<div class="col-md-6">
 						<input type="text" class="form-control" id="user" name="user"
-							placeholder="请输入您的用户名">
+							placeholder="请输入您的用户名" ng-model="user" required>
+					</div>
+					<div class="col-md-3">
+						<span class="invalid"
+							ng-show="login.user.$error.required &&login.user.$dirty">用户名不能为空!</span>
 					</div>
 				</div>
-				<div class="row form-group">
-					<div class="col-md-offset-2 col-md-2">
+				<div class="row form-group labelStyle">
+					<div class=" col-md-2">
 						<label for="pwd">密码:</label>
 					</div>
 					<div class="col-md-6">
 						<input type="password" class="form-control" id="password"
-							name="password" placeholder="请输入您的密码">
+							name="password" placeholder="请输入您的密码" ng-model="password" required>
+					</div>
+					<div class="col-md-3">
+						<span class="invalid"
+							ng-show="login.password.$error.required &&login.password.$dirty">用户名不能为空!</span>
 					</div>
 				</div>
 				<div class="row form-group">
-					<div class="col-md-offset-2 col-md-4	">
+					<div class=" col-md-4	">
 						<label> <input type="radio" name="type" id="userType1"
 							value="1" checked> 个人用户
 						</label>
@@ -47,16 +59,14 @@
 					</div>
 				</div>
 				<div class="row form-group">
-					<div class="col-md-offset-2 col-md-5">
-						<button type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;立即登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					<div class="col-md-offset-1 col-md-7">
+						<button type="submit" class="btn btn-primary "style="width:100%">立即登录</button>
 					</div>
-					<div class="col-md-3">
-						<button type="reset" class="btn btn-default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重置&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-					</div>
+
 
 				</div>
 				<div class="row form-group">
-					<div class="col-md-offset-2 col-md-5">
+					<div class=" col-md-5">
 						<button type="button" class="btn btn-info"
 							onclick="window.location.href='jobseeker/reg.html'">
 							&nbsp;&nbsp;&nbsp;&nbsp;个人用户注册&nbsp;&nbsp;&nbsp;&nbsp;</a>
