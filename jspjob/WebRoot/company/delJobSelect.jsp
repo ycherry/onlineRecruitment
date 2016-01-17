@@ -3,7 +3,7 @@
 <%@page import="java.sql.*"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <link href="../css/left.css" rel="stylesheet" type="text/css">
 </head>
 <body topmargin="0px">
@@ -32,7 +32,7 @@ while(rs.next()){
 int intId=rs.getInt(1);
 %>
 <tr>
-<td height="22" align="center"><%=rs.getString(4)%></td>
+<td height="22" align="center"><a href="viewDetails.jsp?intId=<%=intId%>"><%=rs.getString(4)%></td>
 <td align="center"><%=rs.getString(6)%></td>
 <td align="center"><%=rs.getString(7)%></td>
 <td align="center"><a href="delJobDo.jsp?intId=<%=intId%>">删除</a>

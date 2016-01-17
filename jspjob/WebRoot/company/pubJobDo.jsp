@@ -14,6 +14,8 @@
 	ShowErrorBox show = new ShowErrorBox();
 	DealString str = new DealString();
 	int intT = 0;
+	System.out.println(companyPublishJob.getOthers());
+	System.out.println(request.getParameter("others"));
 	String strName = (String) session.getAttribute("usercode");
 /*	intT = date.insert("INSERT INTO t_pubjob(cusername,specialty, " + " jobName,salary,ptime,atime,other) VALUES('"
 					+ strName + "','" + str.toGb(companyPublishJob.getSpecialty()) + "','"

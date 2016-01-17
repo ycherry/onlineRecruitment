@@ -7,7 +7,7 @@ String strId=(String)request.getParameter("intId");
 DataBaseOperation data=new DataBaseOperation();
 ShowErrorBox show=new ShowErrorBox();
 if(strId!=null){
-int intT=data.delete("DELETE FROM t_pubjob WHERE jobid="+strId);
+int intT=data.delete("DELETE FROM t_pubjob WHERE id="+strId);
 if(intT>0){
 out.print("<script>alert('删除成功!');document.location='index1.html';</script>");
 }
