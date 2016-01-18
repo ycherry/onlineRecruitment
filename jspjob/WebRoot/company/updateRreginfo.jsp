@@ -8,9 +8,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <title>修改信息</title>
-<script type="text/javascript" src="../Js/util/jquery.js"></script>
+<script type="text/javascript" src="../Js/util/jquery-1.10.0.js"></script>
 <script type="text/javascript" src="../Js/util/bootstrap.js"></script>
 <script type="text/javascript" src="../Js/util/angular.js"></script>
+<script type="text/javascript"
+	src="../Js/util/jquery.validate-1.13.1.js"></script>
 <script type="text/javascript" src="../Js/company/reg.js"></script>
 <link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css.map">
@@ -22,7 +24,8 @@
 		DataBaseConn dbc = new DataBaseConn();
 		String cuserName = (String) session.getAttribute("usercode");
 		Statement at = dbc.getStmtread();
-		String sql = "select * from t_company where cuserName=" + "'" + cuserName + "'";
+		String sql = "select * from t_company where cuserName=" + "'"
+				+ cuserName + "'";
 		ResultSet rs = dbc.getRs(sql);
 		while (rs.next()) {
 			System.out.println(rs.getString(3));
@@ -33,8 +36,8 @@
 			<div class="row regTitle">
 				<font color="red"><strong>企业用户修改注册信息</strong></font>
 			</div>
-			<div class="row labelStyle">
-				<div class="col-sm-1">
+			<div class="row updateRegInfoLabel">
+				<div class="col-sm-1 ">
 					<label>企业名称:</label>
 				</div>
 				<div class="col-sm-1">
@@ -145,8 +148,8 @@
 			</tr>
 			<tr align="center">
 				<td height="210" colspan="2" valign="top"><input type="submit"
-					name="Submit" value="修改" onClick="return reg()">
-					&nbsp;&nbsp; <input type="reset" name="Reset" value="重置"></td>
+					name="Submit" value="修改"> &nbsp;&nbsp; <input type="reset"
+					name="Reset" value="重置"></td>
 			</tr>
 		</table>
 	</form>

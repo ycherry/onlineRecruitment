@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="stylesheet" href="	css/common.css">
 </head>
 <body  ng-controller="myCtrl">
-	<form role="form" name="login" action="login.jsp">
+	<form role="form" name="login" action="login.jsp" >
 		<div class="row">
 			<img src="images/topimg1.jpg" width="80%" height="30%" />
 		</div>

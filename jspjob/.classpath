@@ -21,6 +21,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/cyuan031/Downloads/apache-tomcat-7.0.63-windows-x64/apache-tomcat-7.0.63/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/java2/apache-tomcat-7.0.55-windows-x64/apache-tomcat-7.0.55/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
