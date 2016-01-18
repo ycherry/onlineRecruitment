@@ -4,8 +4,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
  <head>
- <script type="text/javascript" src="../Js/jquery-1.4.2.min.js"></script>
-	<script type="text/javascript" src="../Js/jquery-ui-1.8.custom.min.js"></script>
+ <script type="text/javascript" src="../Js/util/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../Js/util/jquery-ui-1.8.custom.min.js"></script>
 	<script language="javascript">
 		jQuery().ready(function(){
 			jQuery('#navigation').accordion({
@@ -67,7 +67,7 @@ body {
   <ul id="navigation">
     <li> <a class="head">基本信息管理</a>
       <ul>
-        <li><a href="reginfo1.jsp" target="mainFrame">修改基本信息</a></li>
+        <li><a href="updateRreginfo.jsp" target="mainFrame">修改基本信息</a></li>
       </ul>
     </li>
     <li> <a class="head">招聘管理</a>
@@ -89,7 +89,7 @@ body {
     </li>
     <li> <a class="head">其他</a>
       <ul>
-        <li><a href="../logout.jsp" target="_parent"">退出</a></li>
+        <li><a href="../logout.jsp" target="_parent">退出</a></li>
       </ul>
     </li>
   </ul>

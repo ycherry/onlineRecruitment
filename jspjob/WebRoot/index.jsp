@@ -15,7 +15,7 @@
 <body  ng-controller="myCtrl">
 	<form role="form" name="login" action="login.jsp">
 		<div class="row">
-			<img src="images/topimg1.jpg" height="90%" />
+			<img src="images/topimg1.jpg" width="80%" height="30%" />
 		</div>
 		<div class="row">
 			<div class="col-md-6">需要添加其它内容</div>
