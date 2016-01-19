@@ -14,9 +14,9 @@
 <script type="text/javascript"
 	src="../Js/util/jquery.validate-1.13.1.js"></script>
 <script type="text/javascript" src="../Js/company/reg.js"></script>
-<link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css">
-<link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css.map">
-<link rel="stylesheet" type="stylesheet" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet"  href="../css/bootstrap.css.map">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 </head>
 <body ng-controller="myCtrl">

@@ -5,7 +5,6 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,9 +15,9 @@
 <script type="text/javascript"
 	src="../Js/util/jquery.validate-1.13.1.js"></script>
 <script type="text/javascript" src="../Js/company/reg.js"></script>
-<link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css">
-<link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css.map">
-<link rel="stylesheet" type="stylesheet" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap.css.map">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
 </head>
 <body>
 	<%
@@ -30,23 +29,37 @@
 		ResultSet rs = dbc.getRs(sql);
 		while (rs.next()) {
 	%>
-	<form role="form" method="post" action="" name="updateJobInfoForm"
-		novalidate>
-		<div class="container">
+	<form role="form" name="updateJobInfoForm" method="post" id="updateJobInfoForm"
+		action="updateJobDo.jsp" novalidate bgcolor="#F5f7f7">
+		<div class="container" align="center">
 			<div class="row regTitle">
-				<strong>修改招聘信息</strong>
+				<font color="red"><strong>修改招聘信息</strong></font>
 			</div>
 			<div class="row updateRegInfoLabel">
-				<div class="col-sm-1" >
-					<label>行业：</label>
+				<div class="col-sm-1 ">
+					<label>企业名称:</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" name="specialty" value="<%=rs.getString(3)%>"
-						placeholder="请输入行业名称（必填）">
+					<input type="text" class="form-control" name="ctruename" id="ctruename"
+						placeholder="请输入您的用户名（必填）" value="<%=rs.getString(3)%>"  >
+				</div>
+			</div>
+
+
+			<div>
+				<div>
+					<button type="submit" name="Submit" class="btn btn-primary"
+						ng-disabled="updateCompnyInfoForm.$invalid">&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1">
+					<span class="invalid" ng-show="updateCompnyInfoForm.$invalid">请按要求填数据!</span>
 				</div>
 			</div>
 		</div>
 	</form>
+
 	<table width="100%" height="450" border="2" align="left"
 		cellpadding="0" cellspacing="0" bgcolor="#F5f7f7">
 
@@ -58,7 +71,7 @@
 
 		<tr>
 			<td width="100" height="22" align="center">行业：</td>
-			<td width="100"><%=rs.getString(3)%></td>
+			<td width="100"><input type="text" value="<%=rs.getString(3)%>" /></td>
 			<td width="100" height="22" align="center">职位名称:</td>
 			<td width="100"><%=rs.getString(4)%></td>
 		</tr>
@@ -83,5 +96,26 @@
 	<%
 		}
 	%>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			console.log("已调用！");
+			$("updateJobInfoForm").validate({
+				rules : {
+					ctruename : {
+						required : true,
+						minlength : 2,
+						maxlength : 10
+					}
+				},
+				messages : {
+					ctruename : {
+						required : "企业名称不能为空！",
+						minlength : '用户名不能小于2个字符',
+						maxlength : '用户名不能超过10个字符'
+					}
+				}
+			});
+		});
+	</script>
 </body>
 </html>
