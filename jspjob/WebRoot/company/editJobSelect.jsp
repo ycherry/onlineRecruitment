@@ -21,6 +21,7 @@
 <td width="153" height="22" align="center">所求职位</td>
 <td width="165" align="center">发布时间</td>
 <td width="219" align="center">有效时间</td>
+<td width="155" align="center">编辑</td>
 <td width="155" align="center">删除</td>
 </tr>
 <%
@@ -35,6 +36,7 @@ int intId=rs.getInt(1);
 <td height="22" align="center"><a href="viewDetails.jsp?intId=<%=intId%>"><%=rs.getString(4)%></td>
 <td align="center"><%=rs.getString(6)%></td>
 <td align="center"><%=rs.getString(7)%></td>
+<td align="center"><a href="updateJob.jsp?intId=<%=intId %>">编辑</a></td>
 <td align="center"><a href="delJobDo.jsp?intId=<%=intId%>">删除</a>
 </td>
 </tr>

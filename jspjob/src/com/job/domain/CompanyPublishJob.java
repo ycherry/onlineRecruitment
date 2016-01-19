@@ -4,6 +4,7 @@ public class CompanyPublishJob {
 	private String cuserName;
 	private String specialty;
 	private String jobName;
+	private String education;
 	private String salary;
 	private String pubTime;
 	private String endTime;
@@ -34,6 +35,13 @@ public class CompanyPublishJob {
 	}
 	public void setJobName(String jobName){
 		this.jobName= jobName;
+	}
+
+	public String getEducation() {
+		return education;
+	}
+	public void setEducation(String education) {
+		this.education = education;
 	}
 	public String getSalary(){
 		return salary;

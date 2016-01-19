@@ -56,7 +56,7 @@ body {
 	padding:3px;
 }
 #navigation li li a:hover {
-	background:url(../images/tab_bg.gif) repeat-x;
+	background:url(../images/topimg1.jpg) repeat-x;
 		border:solid 1px #adb9c2;
 }
 -->
@@ -68,12 +68,13 @@ body {
     <li> <a class="head">基本信息管理</a>
       <ul>
         <li><a href="updateRreginfo.jsp" target="mainFrame">修改基本信息</a></li>
+        <li><a href="changePassword.jsp" target="mainFrame">修改密码</a></li>
       </ul>
     </li>
     <li> <a class="head">招聘管理</a>
       <ul>
         <li><a href="pubJob.html" target="mainFrame">发布招聘信息 </a></li>
-        <li><a href="delJobSelect.jsp" target="mainFrame">删除招聘信息</a></li>
+        <li><a href="editJobSelect.jsp" target="mainFrame">编辑招聘信息</a></li>
       </ul>
     </li>
     <li> <a class="head">简历管理</a>

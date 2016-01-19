@@ -23,11 +23,11 @@
 					+ "','" + time.getYMD() + "','" + str.toGb(companyPublishJob.getEndTime()) + "','"
 					+ str.toGb(companyPublishJob.getOthers()) + "')");
 */
-	intT = date.insert("INSERT INTO t_pubjob(cusername,specialty, " + " jobName,salary,ptime,atime,other) VALUES('"
+	intT = date.insert("INSERT INTO t_pubjob(cusername,specialty, " + " jobName,education,salary,ptime,atime,other) VALUES('"
 					+ strName + "','" + companyPublishJob.getSpecialty() + "','"
-					+ companyPublishJob.getJobName() + "','" + companyPublishJob.getSalary()
+					+ companyPublishJob.getJobName() + "','"+companyPublishJob.getEducation() + "','" + companyPublishJob.getSalary()
 					+ "','" + time.getYMD() + "','" + companyPublishJob.getEndTime() + "','"
-					+ companyPublishJob.getOthers() + "')");
+					+ companyPublishJob.getOthers()  +"')");
 	if (intT <= 0) {
 		out.print(show.errorBox("发布失败,你可能已经下线请新登陆!", "错误信息"));
 		return;

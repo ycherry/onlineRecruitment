@@ -9,8 +9,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="../css/left.css" rel="stylesheet" type="text/css">
-<title>职位详情</title>
+<title>修改招聘信息</title>
+<script type="text/javascript" src="../Js/util/jquery-1.10.0.js"></script>
+<script type="text/javascript" src="../Js/util/bootstrap.js"></script>
+<script type="text/javascript" src="../Js/util/angular.js"></script>
+<script type="text/javascript"
+	src="../Js/util/jquery.validate-1.13.1.js"></script>
+<script type="text/javascript" src="../Js/company/reg.js"></script>
+<link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" type="stylesheet" href="../css/bootstrap.css.map">
+<link rel="stylesheet" type="stylesheet" href="../css/common.css">
 </head>
 <body>
 	<%
@@ -22,8 +30,25 @@
 		ResultSet rs = dbc.getRs(sql);
 		while (rs.next()) {
 	%>
-	<table width="100%" height="450" border="2" align="left" cellpadding="0"
-		cellspacing="0" bgcolor="#F5f7f7">
+	<form role="form" method="post" action="" name="updateJobInfoForm"
+		novalidate>
+		<div class="container">
+			<div class="row regTitle">
+				<strong>修改招聘信息</strong>
+			</div>
+			<div class="row updateRegInfoLabel">
+				<div class="col-sm-1" >
+					<label>行业：</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="text" name="specialty" value="<%=rs.getString(3)%>"
+						placeholder="请输入行业名称（必填）">
+				</div>
+			</div>
+		</div>
+	</form>
+	<table width="100%" height="450" border="2" align="left"
+		cellpadding="0" cellspacing="0" bgcolor="#F5f7f7">
 
 		<tr align="center">
 			<td height="27" colspan="4"><div id="reg">
