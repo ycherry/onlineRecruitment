@@ -18,8 +18,18 @@ body {
 	color:red;
 }
 
-.updateRegInfoLabel{
+.updateInfoLabel{
 	text-align:left;
 	margin:5px;
 	align:left;
+}
+
+input.error{
+	border: 1px solid red;
+	color:red;
+}
+
+label.error {
+    margin-left: 10px;
+    color: red;
 }

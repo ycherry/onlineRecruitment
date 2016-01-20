@@ -29,89 +29,115 @@
 		ResultSet rs = dbc.getRs(sql);
 		while (rs.next()) {
 	%>
-	<form role="form" name="updateJobInfoForm" method="post" id="updateJobInfoForm"
-		action="updateJobDo.jsp" novalidate bgcolor="#F5f7f7">
+	<form role="form" name="updateJobInfoForm" method="post"
+		id="updateJobInfoForm" action="updateJobDo.jsp?intId=<%=intId%>"
+		novalidate bgcolor="#F5f7f7">
 		<div class="container" align="center">
 			<div class="row regTitle">
 				<font color="red"><strong>修改招聘信息</strong></font>
 			</div>
-			<div class="row updateRegInfoLabel">
+			<div class="row updateInfoLabel">
 				<div class="col-sm-1 ">
-					<label>企业名称:</label>
+					<label>行业名称:</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" class="form-control" name="ctruename" id="ctruename"
-						placeholder="请输入您的用户名（必填）" value="<%=rs.getString(3)%>"  >
+					<input type="text" class="form-control" name="specialty"
+						id="specialty" placeholder="请输入行业名称（必填）"
+						value="<%=rs.getString(3)%>">
 				</div>
 			</div>
-
-
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>职位名称:</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control" name="jobName" id="jobName"
+						placeholder="请输入职位名称（必填）" value="<%=rs.getString(4)%>">
+				</div>
+			</div>
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>学历:</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control" name="education"
+						id="education" placeholder="请输入学历（必填）"
+						value="<%=rs.getString(5)%>">
+				</div>
+			</div>
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>薪水:</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control" name="salary" id="salary"
+						placeholder="请输入薪水（必填）" value="<%=rs.getString(6)%>">
+				</div>
+			</div>
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>截至日期:</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control" name="endTime" id="endTime"
+						placeholder="请输入截止日期（必填）" value="<%=rs.getString(8)%>">
+				</div>
+			</div>
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>职位要求:</label>
+				</div>
+				<div class="col-sm-1">
+					<textarea class="form-control" name="atime" id="atime"
+						placeholder="请输入描述一下职位要求" rows="6" cols="4"><%=rs.getString(9)%></textarea>
+				</div>
+			</div>
 			<div>
 				<div>
-					<button type="submit" name="Submit" class="btn btn-primary"
-						ng-disabled="updateCompnyInfoForm.$invalid">&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;</button>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-1">
-					<span class="invalid" ng-show="updateCompnyInfoForm.$invalid">请按要求填数据!</span>
+					<button type="submit" name="Submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;</button>
 				</div>
 			</div>
 		</div>
 	</form>
-
-	<table width="100%" height="450" border="2" align="left"
-		cellpadding="0" cellspacing="0" bgcolor="#F5f7f7">
-
-		<tr align="center">
-			<td height="27" colspan="4"><div id="reg">
-					<font color=red>详细招聘信息</font>
-				</div></td>
-		</tr>
-
-		<tr>
-			<td width="100" height="22" align="center">行业：</td>
-			<td width="100"><input type="text" value="<%=rs.getString(3)%>" /></td>
-			<td width="100" height="22" align="center">职位名称:</td>
-			<td width="100"><%=rs.getString(4)%></td>
-		</tr>
-		<tr>
-			<td width="201" height="22" align="center">学历：</td>
-			<td width="499"><%=rs.getString(5)%></td>
-			<td width="201" height="22" align="center">薪水:</td>
-			<td width="499"><%=rs.getString(6)%></td>
-		</tr>
-		<tr>
-			<td width="201" height="22" align="center">发布日期:</td>
-			<td width="499"><%=rs.getString(7)%></td>
-			<td width="201" height="22" align="center">截止日期:</td>
-			<td width="499"><%=rs.getString(8)%></td>
-		</tr>
-		<tr>
-			<td width="201" height="22" align="center">职位要求:</td>
-			<td width="499" colspan="3"><%=rs.getString(9)%></td>
-		</tr>
-
-	</table>
 	<%
 		}
 	%>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			console.log("已调用！");
-			$("updateJobInfoForm").validate({
+			$("#updateJobInfoForm").validate({
 				rules : {
-					ctruename : {
-						required : true,
-						minlength : 2,
-						maxlength : 10
+					specialty : {
+						required : true
+					},
+					jobName : {
+						required : true
+					},
+					education : {
+						required : true
+					},
+					salary : {
+						required : true
+					},
+					atime : {
+						required : true
 					}
 				},
 				messages : {
-					ctruename : {
-						required : "企业名称不能为空！",
-						minlength : '用户名不能小于2个字符',
-						maxlength : '用户名不能超过10个字符'
+					specialty : {
+						required : " 行业名称不能为空！"
+					},
+					jobName : {
+						required : " 职业名称不能为空！"
+					},
+					education : {
+						required : " 学历不能为空！ "
+					},
+					salary : {
+						required : "薪水不能为空！ "
+					},
+					atime : {
+						required : "截至日期不能为空!"
 					}
 				}
 			});

@@ -35,7 +35,7 @@
 			<div class="row regTitle">
 				<font color="red"><strong>企业用户修改注册信息</strong></font>
 			</div>
-			<div class="row updateRegInfoLabel">
+			<div class="row updateInfoLabel">
 				<div class="col-sm-1 ">
 					<label>企业名称:</label>
 				</div>
@@ -49,7 +49,7 @@
 						ng-show="updateCompnyInfoForm.ctruename.$error.required &&updateCompnyInfoForm.ctruename.$dirty">用户名不能为空!</span>
 				</div>
 			</div>
-			<div class="row updateRegInfoLabel">
+			<div class="row updateInfoLabel">
 				<div class="col-sm-1">
 					<label>联系电话:</label>
 				</div>
@@ -63,7 +63,7 @@
 						ng-show="updateCompnyInfoForm.tel.$error.required &&updateCompnyInfoForm.tel.$dirty">联系电话不能为空!</span>
 				</div>
 			</div>
-			<div class="row updateRegInfoLabel">
+			<div class="row updateInfoLabel">
 				<div class="col-sm-1">
 					<label>电子邮件:</label>
 				</div>
@@ -79,7 +79,7 @@
 						ng-show="updateCompnyInfoForm.email.$invalid&&updateCompnyInfoForm.email.$dirty">请输入正确的邮件格式!</span>
 				</div>
 			</div>
-			<div class="row updateRegInfoLabel">
+			<div class="row updateInfoLabel">
 				<div class="col-sm-1">
 					<label>公司性质:</label>
 				</div>
@@ -93,7 +93,7 @@
 						ng-show="updateCompnyInfoForm.manage.$error.required &&updateCompnyInfoForm.manage.$dirty">公司类型不能为空!</span>
 				</div>
 			</div>
-			<div class="row updateRegInfoLabel">
+			<div class="row updateInfoLabel">
 				<div class="col-sm-1">
 					<label>公司地址:</label>
 				</div>
@@ -107,7 +107,7 @@
 						ng-show="updateCompnyInfoForm.address.$error.required &&updateCompnyInfoForm.address.$dirty">公司地址不能为空!</span>
 				</div>
 			</div>
-			<div class="row updateRegInfoLabel">
+			<div class="row updateInfoLabel">
 				<div class=" col-sm-1">
 					<label>企业简介:</label>
 				</div>
