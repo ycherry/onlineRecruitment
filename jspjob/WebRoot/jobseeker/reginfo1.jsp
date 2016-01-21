@@ -72,7 +72,7 @@
 			</tr>
 			<tr>
 				<td width="200" height="22" align="center">电子邮件:</td>
-				<td width="300"><input type="text" name="emal"
+				<td width="300"><input type="text" name="email"
 					value="<%=rs.getString(10)%>"></td>
 			</tr>
 			<tr>

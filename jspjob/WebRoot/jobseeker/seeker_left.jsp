@@ -4,8 +4,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
  <head>
- 	<script type="text/javascript" src="../Js/jquery-1.4.2.min.js"></script>
-	<script type="text/javascript" src="../Js/jquery-ui-1.8.custom.min.js"></script>
+ 	<script type="text/javascript" src="../Js/util/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../Js/util/jquery-ui-1.8.custom.min.js"></script>
 	<script language="javascript">
 		jQuery().ready(function(){
 			jQuery('#navigation').accordion({
