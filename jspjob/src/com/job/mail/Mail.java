@@ -2,9 +2,16 @@ package com.job.mail;
 
 import java.util.Properties;
 
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
+import javax.mail.Address;
+import javax.mail.BodyPart;
+import javax.mail.Message;
 import javax.mail.Multipart;
 import javax.mail.Session;
+import javax.mail.Transport;
 import javax.mail.internet.*;
+
 
 public class Mail {
 
@@ -76,9 +83,153 @@ public class Mail {
 			return false;
 		}
 	}
+	
+	public boolean setBody(String mailBody){
+		try{
+			BodyPart bp=new MimeBodyPart();
+			bp.setContent(mailBody,"text/html;charset=UTF-8");
+			mp.addBodyPart(bp);
+			return true;
+		}catch(Exception e){
+			System.out.println("设置邮件正文是发生错误！"+e);
+			return false;
+		}
+	}
+	
+	public boolean addFileAffix(String filename){
+		System.out.println("增加邮件附件："+filename);
+		try{
+			BodyPart bp=new MimeBodyPart();
+			FileDataSource fields=new FileDataSource(filename);
+			bp.setDataHandler(new DataHandler(fields));
+			mp.addBodyPart(bp);
+			return true;
+		}catch(Exception e){
+			System.out.println("增加邮件附件"+filename+"发生错误！"+e);
+			return false;
+		}
+	}
+	
+	public boolean setFrom(String from){
+		System.out.println("设置写信人");
+		try{
+			mimeMsg.setFrom(new InternetAddress(from));//设置发信人
+			return true;
+		}catch(Exception e){
+			System.out.println("设置写信人出错！"+e);
+			return false;
+		}
+	}
+	
+	public boolean setTo(String to){
+		if(to==null){
+			return false;
+		}
+		try{
+			mimeMsg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+			return true;
+		}catch(Exception e){
+			return false;
+		}
+	}
+	
+	public boolean setCopyTo(String copyto){
+		if(copyto==null){
+			return false;
+		}
+		try{
+			mimeMsg.setRecipients(Message.RecipientType.CC, (Address[])InternetAddress.parse(copyto));
+			return true;
+		}catch(Exception e){
+			System.out.println("设置抄送人出错");
+			return false;
+		}
+	}
+	
+	public boolean sendOut(){
+		try{
+			mimeMsg.setContent(mp);
+			mimeMsg.saveChanges();
+			System.out.println("邮件正在发送。。。。");
+			Session mailSession = session.getInstance(props,null);
+			Transport transport=mailSession.getTransport("smtp");
+			System.out.println("设置用户名密码");
+			transport.connect((String)props.get("mail.smtp.host"),username,password);
+			System.out.println("设置接收者");
+			transport.sendMessage(mimeMsg, mimeMsg.getRecipients(Message.RecipientType.TO));
+			transport.sendMessage(mimeMsg,mimeMsg.getRecipients(Message.RecipientType.CC));
+			System.out.println("邮件发送成功！");
+			transport.close();
+			return true;
+		}catch(Exception e){
+			System.out.println("邮件发送失败！"+e);
+			return false;
+		}
+	}
+	
+	public static boolean send(String smtp,String from,String to, String subject,String content,String username,String password ){
+		Mail theMail=new Mail(smtp);
+		theMail.setNeedAuth(true);
+		if(!theMail.setSubject(subject)) return false;
+		if(!theMail.setBody(content)) return false;
+		if(!theMail.setTo(to)) return false;
+		if(!theMail.setFrom(from)) return false;
+		theMail.setNamePass(username, password);
+		if(!theMail.sendOut()) return false;
+		return true;
+	}
+	
+	public static boolean sendAndCc(String smtp,String from,String to,String copyto,String subject,String content,String username,String password){
+		Mail theMail=new Mail(smtp);
+		theMail.setNeedAuth(true);
+		if(!theMail.setSubject(subject)) return false;
+		if(!theMail.setBody(content)) return false;
+		if(!theMail.setTo(to)) return false;
+		if(!theMail.setCopyTo(copyto)) return false;
+		if(!theMail.setFrom(from)) return false;
+		theMail.setNamePass(username, password);
+		if(!theMail.sendOut()) return false;
+		return true;
+	}
+	
+	public static boolean sendWithAttachment(String smtp,String from,String to,String subject,String content,String username,String password,String filename){
+		Mail theMail=new Mail(smtp);
+	    theMail.setNeedAuth(true);
+	    if(!theMail.setSubject(subject)) return false;
+	    if(!theMail.setBody(content)) return false;
+	    if(!theMail.addFileAffix(filename)) return false;
+	    if(!theMail.setFrom(from)) return false;
+	    if(!theMail.setTo(to)) return false;
+		theMail.setNamePass(username, password);
+		
+		if(!theMail.sendOut()) return false;
+		return true;
+		
+	}
+	
+	public static boolean sendWithAttachmentAndCc(String smtp,String from,String to,String copyto,String subject,String content,String username,String password,String filename){
+		Mail theMail= new Mail(smtp);
+		theMail.setNeedAuth(true);
+		if(!theMail.setSubject(subject)) return true;
+		if(!theMail.setBody(content)) return true;
+		if(!theMail.addFileAffix(filename)) return true;
+		if(!theMail.setTo(to)) return false;
+		if(!theMail.setCopyTo(copyto)) return false;
+		if(!theMail.setFrom(from)) return false;
+		theMail.setNamePass(username, password);
+		if(!theMail.sendOut()) return false;
+		 return true;
+	}
 	//http://chenguanwei2008.iteye.com/blog/368178
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		String smtp = "smtp.sina.com";  
+	    String from = "发信人";  
+	    String to = "收信人";
+	    String subject = "邮件主题";  
+	    String content = "邮件内容";  
+	    String username="cyan_test@sina.com";  
+	    String password="cyan_test";  
+	    Mail.send(smtp, from, to,subject, content, username, password);
 
 	}
 
