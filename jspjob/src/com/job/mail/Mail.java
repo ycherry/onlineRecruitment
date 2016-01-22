@@ -30,15 +30,19 @@ public class Mail {
 	}
 	
 	public void setSmtpHost(String hostName){
-		System.out.println("设置系统属性：mail.stmp.host="+hostName);
+		System.out.println("设置系统属性：mail.smtp.host="+hostName);
 		if(props== null){
+			System.setProperty("java.net.preferIPv4Stack", "true");
 			props=System.getProperties();//获得系统属性对象
-			props.put("mail.stmp.host", hostName);//设置SMTP主机
+			props.put("mail.transport.protocol", "smtp");
+			props.put("mail.smtp.host", hostName);//设置SMTP主机
+			System.out.println("ipv4："+props.get("java.net.preferIPv4Stack"));
 		}
 	}
 	
 	public boolean createMimeMesage(){
 		try{
+			
 			System.out.println("准备获取邮件会话对象!");
 			session=Session.getDefaultInstance(props,null);
 		}catch(Exception e){
@@ -57,15 +61,16 @@ public class Mail {
 	}
 	
 	public void setNeedAuth(boolean need){
-		System.out.println("设置smtp身份认证：mail.stmp.auth="+need);
+		System.out.println("设置smtp身份认证：mail.smtp.auth="+need);
 		if(props==null){
 			props=System.getProperties();
 		}
 		if(need){
-			props.put("mail.stmp.auth", "true");
+			props.put("mail.smtp.auth", need);
 		}else{
-			props.put("mail.stmp.auth","false");
+			props.put("mail.smtp.auth",need);
 		}
+		System.out.println(props.get("mail.smtp.auth"));
 	}
 	
 	public void setNamePass(String name,String pass){
@@ -154,6 +159,7 @@ public class Mail {
 			Session mailSession = session.getInstance(props,null);
 			Transport transport=mailSession.getTransport("smtp");
 			System.out.println("设置用户名密码");
+			System.out.println(props.get("mail.smtp.host"));
 			transport.connect((String)props.get("mail.smtp.host"),username,password);
 			System.out.println("设置接收者");
 			transport.sendMessage(mimeMsg, mimeMsg.getRecipients(Message.RecipientType.TO));
@@ -222,13 +228,21 @@ public class Mail {
 	}
 	//http://chenguanwei2008.iteye.com/blog/368178
 	public static void main(String[] args) {
-		String smtp = "smtp.sina.com";  
+//		String smtp = "smtp.sina.com";  
+//	    String from = "发信人";  
+//	    String to = "收信人";
+//	    String subject = "邮件主题";  
+//	    String content = "邮件内容";  
+//	    String username="cyan_test@sina.com";  
+//	    String password="cyan_test"; 
+//	    
+	    String smtp = "smtp.qq.com";  
 	    String from = "发信人";  
 	    String to = "收信人";
 	    String subject = "邮件主题";  
 	    String content = "邮件内容";  
-	    String username="cyan_test@sina.com";  
-	    String password="cyan_test";  
+	    String username="2691611331@qq.com";  
+	    String password="yyy,889124";  
 	    Mail.send(smtp, from, to,subject, content, username, password);
 
 	}

@@ -146,6 +146,7 @@
 			System.out.println("设置发件人!");
 			try {
 				mimeMsg.setFrom(new InternetAddress(from));
+				System.out.println(mimeMsg.getFrom());
 				return true;
 			} catch (Exception e) {
 				return false;
@@ -227,7 +228,7 @@
 		for (int i = 0; intI < arrstrTo.length; intI++) {
 			if (!arrstrTo[intI].equals("")) {
 				try {
-					String mailbody = "<meta http-equiv=Content-Type content=text/html;charset = gb2312>"
+					String mailbody = "<meta http-equiv=Content-Type content=text/html;charset = UTF-8>"
 							+ "<div align=center> " + strMessage + "</div>";
 					sendMail themail = new sendMail(smtpserver);
 					themail.setNeedAuth(true);
@@ -243,8 +244,8 @@
 					if (themail.setFrom(strFrom) == false)
 						return;
 					//以上指定收件人
-					if (themail.addFileAffix(attachFile) == false)
-						return;
+					//if (themail.addFileAffix(attachFile) == false)
+					//	return;
 					//以上完成附件添写
 					String user = "";
 					if (strFrom.indexOf("@") > 0) {

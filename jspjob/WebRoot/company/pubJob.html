@@ -1,55 +1,184 @@
 <html>
 <head>
-<meta http=equiv="Content=Type" content="text/html; charset=UTF-8">
+<meta http=equiv= "Content=Type " content="text/html; charset=UTF-8">
 </head>
+<title>修改信息</title>
+<script type="text/javascript" src="../Js/util/jquery-1.10.0.js"></script>
+<script type="text/javascript" src="../Js/util/bootstrap.js"></script>
+<script type="text/javascript" src="../Js/util/angular.js"></script>
+<script type="text/javascript"
+	src="../Js/util/jquery.validate-1.13.1.js"></script>
+<script type="text/javascript" src="../Js/company/reg.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap.css.map">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
 <link href="../css/left.css" rel="stylesheet" type="text/css">
-  <body topmargin="0px">
-  <form name="form" method="post" action="pubJobDo.jsp">
-   <table width="100%" height="500" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
-   <tr>
-   <td height="20">&nbsp;</td>
-   </tr>
-   <tr>
-   <td align="left" valign="top"><table width="703" border="0"
-   align="left" cellpadding="0" cellspacing="0" bgcolor="#f5f7f7">
-   
-   <tr align="center">
-   <td height="30" colspan="2" align="left"><div id="reg"><font color=red>发布招聘信息</font></div></td>
-   </tr>
-   <tr>
-   <td width="145" height="30" align="center">招聘行业:</td>
-   <td width="558" height="30" align="left"><input type="text" name="specialty" value="不详"></td>
-   </tr>
-   <tr>
-   <td height="30" align="center">招聘职位:</td>
-   <td height="30" align="left"><input type="text" name="jobName">
-   </td>
-   </tr>
-   <tr>
-   <td height="30" align="center">期望薪水:</td>
-   <td height="30" align="left"><input type="text" name="salary" value="面议"></td>
-   </tr>
-   <tr>
-   <td height="30" align="center">学历:</td>
-   <td height="30" align="left"><input type="text" name="education" value="不详"></td>
-   </tr>
-   <tr>
-   <td height="30" align="center">有效时间:</td>
-   <td height="30" align="left"><input type="text" name="endTime">年-月-日</td>
-   </tr>
-   <tr>
-   <td width="145" height="126" align="center">其他说明:</td>
-   <td width="558" align="left"><textarea name="others"cols="35" rows="7"></textarea></td>
-   </tr>
-   <tr align="center">
-   <td height="157" colspan="2"><input type="submit" name="Submit" value="发布">
-   &nbsp;&nbsp;
-   <input type="reset" name="Reset" value="重置"></td>
-   </tr>
+<body topmargin="0px">
+	<form role="form" method="post" id="pubJobForm" action="pubJobDo.jsp">
 
-   </table></td>
-   </tr>
-   </table></form>
-   </body>
-   </html>
-      
+		<div class="container" align="center">
+			<div class="row regTitle">
+				<font color="red"><strong>发布招聘信息</strong></font>
+			</div>
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>招聘行业:</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control" name="specialty"
+						id="specialty" placeholder="请输入公司所属行业（必填）">
+				</div>
+			</div>
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>招聘职位:</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control" name="jobName" id="jobName"
+						placeholder="请输入招聘职位（必填）">
+				</div>
+			</div>
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>工资:</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control" name="salary" id="salary"
+						placeholder="请输入工资（必填）">
+				</div>
+			</div>
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>学历:</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control" name="education"
+						id="education" placeholder="请输入所需学历（必填）">
+				</div>
+			</div>
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>有效时间:</label>
+				</div>
+				<div class="col-sm-1">
+					<input type="text" class="form-control" name="endtime" id="endtime"
+						placeholder="请输入有效时间（必填）">
+				</div>
+			</div>
+			<div class="row updateInfoLabel">
+				<div class="col-sm-1 ">
+					<label>职位要求:</label>
+				</div>
+				<div class="col-sm-4">
+					<textarea class="form-control" rows="6" cols="12"
+						placeholder="请输入职位要求" name="others" id="othesr"></textarea>
+				</div>
+			</div>
+
+			<div>
+				<div>
+					<button type="submit" name="Submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					<button type="reset" name="reset" class="btn btn-default">&nbsp;&nbsp;&nbsp;&nbsp;重&nbsp;&nbsp;&nbsp;&nbsp;置&nbsp;&nbsp;&nbsp;&nbsp;</button>
+				</div>
+				<div></div>
+			</div>
+		</div>
+	</form>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#pubJobForm").validate({
+				rules : {
+					specialty : {
+						required : true
+					},
+					jobName : {
+						required : true
+					},
+					salary : {
+						required : true
+					},
+					education : {
+						required : true
+					},
+					endtime : {
+						required : true
+					}
+
+				},
+				messages : {
+					specialty : {
+						required : "行业名称不能为空！"
+					},
+					jobName : {
+						required : "职位名称不能为空!"
+					},
+					salary : {
+						required : "工资不能为空！"
+					},
+					education : {
+						required : "学历不能为空！"
+					},
+					endtime : {
+						required : "截止时间不能为空！"
+					}
+				}
+			});
+		});
+	</script>
+	<form name="form" method="post" action="pubJobDo.jsp">
+		<table width="100%" height="500" border="0" cellpadding="0"
+			cellspacing="0" bgcolor="#ffffff">
+			<tr>
+				<td height="20">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><table width="703" border="0"
+						align="left" cellpadding="0" cellspacing="0" bgcolor="#f5f7f7">
+
+						<tr align="center">
+							<td height="30" colspan="2" align="left"><div id="reg">
+									<font color=red>发布招聘信息</font>
+								</div></td>
+						</tr>
+						<tr>
+							<td width="145" height="30" align="center">招聘行业:</td>
+							<td width="558" height="30" align="left"><input type="text"
+								name="specialty" value="不详"></td>
+						</tr>
+						<tr>
+							<td height="30" align="center">招聘职位:</td>
+							<td height="30" align="left"><input type="text"
+								name="jobName"></td>
+						</tr>
+						<tr>
+							<td height="30" align="center">期望薪水:</td>
+							<td height="30" align="left"><input type="text"
+								name="salary" value="面议"></td>
+						</tr>
+						<tr>
+							<td height="30" align="center">学历:</td>
+							<td height="30" align="left"><input type="text"
+								name="education" value="不详"></td>
+						</tr>
+						<tr>
+							<td height="30" align="center">有效时间:</td>
+							<td height="30" align="left"><input type="text"
+								name="endTime">年-月-日</td>
+						</tr>
+						<tr>
+							<td width="145" height="126" align="center">其他说明:</td>
+							<td width="558" align="left"><textarea name="others"
+									cols="35" rows="7"></textarea></td>
+						</tr>
+						<tr align="center">
+							<td height="157" colspan="2"><input type="submit"
+								name="Submit" value="发布"> &nbsp;&nbsp; <input
+								type="reset" name="Reset" value="重置"></td>
+						</tr>
+
+					</table></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
