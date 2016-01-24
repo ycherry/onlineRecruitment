@@ -11,6 +11,7 @@ import javax.mail.Multipart;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.*;
+import javax.mail.*;
 
 
 public class Mail {
@@ -31,13 +32,22 @@ public class Mail {
 	
 	public void setSmtpHost(String hostName){
 		System.out.println("设置系统属性：mail.smtp.host="+hostName);
-		if(props== null){
-			System.setProperty("java.net.preferIPv4Stack", "true");
+		if(hostName=="smtp.qq.com"){
+			if(props== null){
+				props=System.getProperties();//获得系统属性对象
+				props.put("mail.transport.protocol", "smtp");
+				props.put("mail.smtp.host", hostName);//设置SMTP主机
+		    //这些设置针对qq邮箱
+				props.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+				props.setProperty("mail.smtp.port", "465");
+				props.setProperty("mail.smtp.socketFactory.port", "465");
+			}
+		}else{
 			props=System.getProperties();//获得系统属性对象
 			props.put("mail.transport.protocol", "smtp");
 			props.put("mail.smtp.host", hostName);//设置SMTP主机
-			System.out.println("ipv4："+props.get("java.net.preferIPv4Stack"));
 		}
+		
 	}
 	
 	public boolean createMimeMesage(){
@@ -78,6 +88,7 @@ public class Mail {
 		password=pass;
 	}
 	
+
 	public boolean setSubject(String mailSubject){
 		System.out.println("设置邮件主题");
 		try{
@@ -100,13 +111,14 @@ public class Mail {
 			return false;
 		}
 	}
-	
+	//http://blog.csdn.net/haoyuewuwei/article/details/4453330  上传附件
 	public boolean addFileAffix(String filename){
 		System.out.println("增加邮件附件："+filename);
 		try{
 			BodyPart bp=new MimeBodyPart();
 			FileDataSource fields=new FileDataSource(filename);
 			bp.setDataHandler(new DataHandler(fields));
+			bp.setFileName(fields.getName());
 			mp.addBodyPart(bp);
 			return true;
 		}catch(Exception e){
@@ -156,14 +168,17 @@ public class Mail {
 			mimeMsg.setContent(mp);
 			mimeMsg.saveChanges();
 			System.out.println("邮件正在发送。。。。");
+//			Session mailSession = session.getInstance(props,new MyAuthenticator(username,password));
 			Session mailSession = session.getInstance(props,null);
+			mailSession.setDebug(true);
 			Transport transport=mailSession.getTransport("smtp");
 			System.out.println("设置用户名密码");
-			System.out.println(props.get("mail.smtp.host"));
+			System.out.println(username);
+			System.out.println(password);
 			transport.connect((String)props.get("mail.smtp.host"),username,password);
 			System.out.println("设置接收者");
 			transport.sendMessage(mimeMsg, mimeMsg.getRecipients(Message.RecipientType.TO));
-			transport.sendMessage(mimeMsg,mimeMsg.getRecipients(Message.RecipientType.CC));
+//			transport.sendMessage(mimeMsg,mimeMsg.getRecipients(Message.RecipientType.CC));
 			System.out.println("邮件发送成功！");
 			transport.close();
 			return true;
@@ -227,24 +242,33 @@ public class Mail {
 		 return true;
 	}
 	//http://chenguanwei2008.iteye.com/blog/368178
-	public static void main(String[] args) {
+//	public static void main(String[] args) {
 //		String smtp = "smtp.sina.com";  
+//	    String from = "cyan_test@sina.com";  
+//	    String to = "1120065434@qq.com";
+//	    String subject = "测试邮件邮件主题";  
+//	    String content = "你好我是新浪邮箱";  
+//	    String username="cyan_test@sina.com";  
+//	    String password="cyan_test"; 
+	    
+//	    String smtp = "smtp.qq.com";  
 //	    String from = "发信人";  
 //	    String to = "收信人";
 //	    String subject = "邮件主题";  
 //	    String content = "邮件内容";  
-//	    String username="cyan_test@sina.com";  
-//	    String password="cyan_test"; 
+//	    String username="2691611331@qq.com";  
+//	    String password="yan,889124";  
 //	    
-	    String smtp = "smtp.qq.com";  
-	    String from = "发信人";  
-	    String to = "收信人";
-	    String subject = "邮件主题";  
-	    String content = "邮件内容";  
-	    String username="2691611331@qq.com";  
-	    String password="yyy,889124";  
-	    Mail.send(smtp, from, to,subject, content, username, password);
-
-	}
+//	    String smtp = "smtp.qq.com";  
+//	    String from = "1163423440@qq.com";  
+//	    String to = "1120065434@qq.com";
+//	    String subject = "测试邮件";  
+//	    String content = "你好我是碓冰拓海";  
+//	    String username="1163423440@qq.com";  
+//	    String password="yyy,19941115";  
+//	    String password="qbualydcqmhjhfhb";
+//	    Mail.send(smtp, from, to,subject, content, username, password);
+//      C:\\Users\\Administrator\\Desktop\\topimg1.jpg
+//	}
 
 }

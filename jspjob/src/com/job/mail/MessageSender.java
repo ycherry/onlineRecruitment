@@ -39,8 +39,9 @@ public class MessageSender {
 		Transport transport = session.getTransport();
 		// 发送用户名、密码连接到指定的 smtp 服务器
 		//transport.connect(smtpServer, user, pwd);
-		transport.connect("smtp.sina.com", "cyan_test@sina.com", "cyan_test");
+//		transport.connect("smtp.sina.com", "cyan_test@sina.com", "cyan_test");
 //		transport.connect("smtp.qq.com", "1120065434@qq.com", "yyy,889124");
+		transport.connect("smtp.qq.com", "1163423440@qq.com", "yyy,19941115");
 
 		transport.sendMessage(msg, msg.getRecipients(Message.RecipientType.TO));
 		transport.close();

@@ -11,7 +11,7 @@
 </tr>
 <tr>
 <td align="left" valign="top"><table width="600" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#F5f7f7">
-<form name="form1" method="post" action="sendMail.jsp">
+<form name="form1" method="post" action="sendMail.jsp" >
 <tr align="center">
 <td height="27" colspan="2"><div id="reg"><font color=red>发送邮件</font></div></td>
 </tr>
@@ -50,7 +50,7 @@
 </tr>
 <tr>
 <td height="22" align="center">附&nbsp;&nbsp;&nbsp;&nbsp;件:</td>
-<td height="22"><input type="text" name="file">例如:c:\\\\boot.ini</td>
+<td height="22"><input type="text " name="file">例如:c:\\\\boot.ini</td>
 </tr>
 <tr> 
 <td height="22" colspan="2" align="center">内&nbsp;&nbsp;容:</td>
