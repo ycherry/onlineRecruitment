@@ -61,7 +61,7 @@
 					<label>有效时间:</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" class="form-control" name="endtime" id="endtime"
+					<input type="text" class="form-control" name="endTime" id="endTime"
 						placeholder="请输入有效时间（必填）">
 				</div>
 			</div>
@@ -71,7 +71,7 @@
 				</div>
 				<div class="col-sm-4">
 					<textarea class="form-control" rows="6" cols="12"
-						placeholder="请输入职位要求" name="others" id="othesr"></textarea>
+						placeholder="请输入职位要求" name="others" id="others"></textarea>
 				</div>
 			</div>
 
@@ -125,60 +125,5 @@
 			});
 		});
 	</script>
-	<form name="form" method="post" action="pubJobDo.jsp">
-		<table width="100%" height="500" border="0" cellpadding="0"
-			cellspacing="0" bgcolor="#ffffff">
-			<tr>
-				<td height="20">&nbsp;</td>
-			</tr>
-			<tr>
-				<td align="left" valign="top"><table width="703" border="0"
-						align="left" cellpadding="0" cellspacing="0" bgcolor="#f5f7f7">
-
-						<tr align="center">
-							<td height="30" colspan="2" align="left"><div id="reg">
-									<font color=red>发布招聘信息</font>
-								</div></td>
-						</tr>
-						<tr>
-							<td width="145" height="30" align="center">招聘行业:</td>
-							<td width="558" height="30" align="left"><input type="text"
-								name="specialty" value="不详"></td>
-						</tr>
-						<tr>
-							<td height="30" align="center">招聘职位:</td>
-							<td height="30" align="left"><input type="text"
-								name="jobName"></td>
-						</tr>
-						<tr>
-							<td height="30" align="center">期望薪水:</td>
-							<td height="30" align="left"><input type="text"
-								name="salary" value="面议"></td>
-						</tr>
-						<tr>
-							<td height="30" align="center">学历:</td>
-							<td height="30" align="left"><input type="text"
-								name="education" value="不详"></td>
-						</tr>
-						<tr>
-							<td height="30" align="center">有效时间:</td>
-							<td height="30" align="left"><input type="text"
-								name="endTime">年-月-日</td>
-						</tr>
-						<tr>
-							<td width="145" height="126" align="center">其他说明:</td>
-							<td width="558" align="left"><textarea name="others"
-									cols="35" rows="7"></textarea></td>
-						</tr>
-						<tr align="center">
-							<td height="157" colspan="2"><input type="submit"
-								name="Submit" value="发布"> &nbsp;&nbsp; <input
-								type="reset" name="Reset" value="重置"></td>
-						</tr>
-
-					</table></td>
-			</tr>
-		</table>
-	</form>
 </body>
 </html>

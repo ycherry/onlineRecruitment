@@ -16,6 +16,8 @@
 	int intT = 0;
 	System.out.println(companyPublishJob.getOthers());
 	System.out.println("时间："+time.getYMD());
+	System.out.println(request.getParameter("endtime"));
+	System.out.println(companyPublishJob.getEndTime());
 	String strName = (String) session.getAttribute("usercode");
 /*	intT = date.insert("INSERT INTO t_pubjob(cusername,specialty, " + " jobName,salary,ptime,atime,other) VALUES('"
 					+ strName + "','" + str.toGb(companyPublishJob.getSpecialty()) + "','"
@@ -23,7 +25,7 @@
 					+ "','" + time.getYMD() + "','" + str.toGb(companyPublishJob.getEndTime()) + "','"
 					+ str.toGb(companyPublishJob.getOthers()) + "')");
 */
-	intT = date.insert("INSERT INTO t_pubjob(cusername,specialty, " + " jobName,education,salary,ptime,atime,other) VALUES('"
+	intT = date.insert("INSERT INTO t_pubjob(cusername,specialty, " + " jobName,education,salary,pubtime,endtime,other) VALUES('"
 					+ strName + "','" + companyPublishJob.getSpecialty() + "','"
 					+ companyPublishJob.getJobName() + "','"+companyPublishJob.getEducation() + "','" + companyPublishJob.getSalary()
 					+ "','" + time.getYMD() + "','" + companyPublishJob.getEndTime() + "','"

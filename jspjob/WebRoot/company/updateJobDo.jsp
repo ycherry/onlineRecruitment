@@ -16,7 +16,7 @@
 		java.sql.Statement stat = dbc.getStmt();
 		String sql = "update t_pubjob set specialty='" + companyPublishJob.getSpecialty() + "', jobName='"
 				+ companyPublishJob.getJobName() + "',education='" + companyPublishJob.getEducation()
-				+ "',salary='" + companyPublishJob.getSalary() + "',atime='" + companyPublishJob.getEndTime()
+				+ "',salary='" + companyPublishJob.getSalary() + "',endtime='" + companyPublishJob.getEndTime()
 				+ "'where id='" + intId + "'";
 		System.out.println(sql);
 		stat.addBatch(sql);
