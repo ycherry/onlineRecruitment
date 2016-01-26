@@ -84,15 +84,15 @@ body {
 	<div class="sidebar-menu">
 		<!-- http://getbootstrap.com/components/#glyphicons 图标 -->
 		<a href="#userMeun" class="nav-header menu-first collapsed"
-			data-toggle="collapse"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;用户信息管理</a>
+			data-toggle="collapse"><i class=""></i>&nbsp;&nbsp;用户信息管理</a>
 		<ul id="userMeun" class="nav nav-list collapse menu-second">
 			<li><a href="updateRreginfo.jsp" target="mainFrame"><i
-					class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;修改信息</a></li>
+					class=""></i>&nbsp;&nbsp;修改信息</a></li>
 			<li><a href="changePassword.jsp" target="mainFrame"><i
-					class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;修改密码</a></li>
+					class=""></i>&nbsp;&nbsp;修改密码</a></li>
 		</ul>
 		<a href="#recruitmentMenu" class="nav-header menu-first collapsed"
-			data-toggle="collapse"><i class="glyphicon glyphicon-file"></i>招聘管理</a>
+			data-toggle="collapse"><i class=""></i>招聘管理</a>
 		<ul id="recruitmentMenu" class="nav nav-list collapse menu-second">
 			<li><a href="pubJob.html" target="mainFrame"><i class="icon-pencil"></i> 发布招聘信息</a></li>
 			<li><a href="editJobSelect.jsp" target="mainFrame"><i class="icon-list-alt"></i> 编辑招聘信息</a></li>

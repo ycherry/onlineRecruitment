@@ -14,7 +14,7 @@
 		ShowErrorBox show = new ShowErrorBox();
 		String strChecked = "checked";
 	//	ResultSet rs = con.getRs("SELECT jobName,specialty,salary,pubtime,endtime,other FROM t_pubjob order by pubtime desc");
-	    ResultSet rs=con.getRs("select trueName,specialty,salary,atime,other from t_applyjob,t_jobseeker where t_applyjob.auserName=t_jobseeker.auserName order by ptime desc");
+	    ResultSet rs=con.getRs("select trueName,t_applyjob.specialty,salary,atime,other,t_applyjob.auserName from t_applyjob,t_jobseeker where t_applyjob.auserName=t_jobseeker.auserName order by ptime desc");
 	%>
 	<table width="695" heigth="500" border="1" cellpadding="0"
 		cellspacing="0" bgcolor="#F5f7f7">
@@ -24,7 +24,6 @@
 			<td width="58">期望薪水：</td>
 			<td width="117">发布日期：</td>
 			<td >邮箱：</td>
-			<td width="155">备注：</td>
 		</tr>
 		<%
 			while (rs.next()) {
@@ -35,7 +34,6 @@
 			<td><%=rs.getString(3)%></td>
 			<td><%=rs.getString(4)%></td>
 			<td><%=rs.getString(5)%></td>
-			<td><%=rs.getString(6)%></td>
 		</tr>
 		<%
 			}

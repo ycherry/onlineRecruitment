@@ -5,7 +5,7 @@
 <link href="../css/left.css" rel="stylesheet" type="text/css">
 </head>
 <body topmargin="0px">
-<table width="100%" height="500" border="0" cellpadding="0" cellspacing="0" bacolor="#FFFFFF">
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" bacolor="#FFFFFF">
 <tr>
 <td height="20">&nbsp;</td>
 </tr>
